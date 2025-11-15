@@ -8,8 +8,10 @@ import News from './pages/News'
 import Contact from './pages/Contact'
 
 function App() {
+  const basename = import.meta.env.PROD ? '/afyakaar' : '/'
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
