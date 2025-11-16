@@ -66,14 +66,14 @@ const Carousel = ({ slides }) => {
       {/* Navigation Buttons */}
       <button
         onClick={scrollPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-cream-50/90 hover:bg-cream-50 text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
         aria-label="Image précédente"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={scrollNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-cream-50/90 hover:bg-cream-50 text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
         aria-label="Image suivante"
       >
         <ChevronRight className="w-6 h-6" />

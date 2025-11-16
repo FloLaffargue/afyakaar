@@ -43,7 +43,7 @@ const News = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-cream-50 border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((category) => (
@@ -53,7 +53,7 @@ const News = () => {
                 className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-primary-500 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-cream-200 text-gray-700 hover:bg-cream-300'
                 }`}
               >
                 {category}
@@ -64,7 +64,7 @@ const News = () => {
       </section>
 
       {/* News Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-cream-100">
         <div className="container mx-auto px-4">
           {filteredNews.length === 0 ? (
             <div className="text-center py-12">

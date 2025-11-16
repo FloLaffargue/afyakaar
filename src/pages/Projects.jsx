@@ -62,7 +62,7 @@ const Projects = () => {
       </section>
 
       {/* Projects 2026 Section - Timeline */}
-      <section className="py-16 bg-gradient-to-br from-white to-gray-50">
+      <section className="py-16 bg-gradient-to-br from-cream-50 to-cream-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title">Projets 2026</h2>
@@ -176,7 +176,7 @@ const Projects = () => {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-cream-50 text-primary-600 hover:bg-cream-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Faire un don
           </a>

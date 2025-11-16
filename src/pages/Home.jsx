@@ -201,12 +201,12 @@ const Home = () => {
   return (
     <div>
       {/* Carousel Section */}
-      <section className="bg-gray-50">
+      <section className="bg-cream-200">
         <Carousel slides={carouselSlides} />
       </section>
 
       {/* Nos Valeurs Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-cream-100 via-cream-50 to-cream-100 relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
@@ -259,7 +259,7 @@ const Home = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-cream-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Notre Mission</h2>
@@ -285,7 +285,7 @@ const Home = () => {
       </section>
 
       {/* Achievements Section - Timeline */}
-      <section className="py-16 bg-gradient-to-br from-white to-gray-50">
+      <section className="py-16 bg-gradient-to-br from-cream-50 to-cream-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title">Nos Réalisations en 2025</h2>
@@ -376,7 +376,7 @@ const Home = () => {
       </section>
 
       {/* Education Impact Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-cream-200">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -412,7 +412,7 @@ const Home = () => {
       </section>
 
       {/* Entrepreneurship Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Soutien aux Entrepreneurs</h2>
@@ -464,7 +464,7 @@ const Home = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center bg-white rounded-2xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-4 border-white/20">
+              <div key={index} className="text-center bg-cream-50 rounded-2xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-4 border-primary-200/30">
                 <div className="text-6xl md:text-7xl font-black text-primary-600 mb-4">{stat.value}</div>
                 <div className="text-2xl font-bold text-gray-900 mb-3">{stat.label}</div>
                 <div className="text-gray-600 text-base">{stat.description}</div>
@@ -476,7 +476,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               to="/contact"
-              className="inline-flex items-center bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center bg-cream-50 text-primary-600 hover:bg-cream-200 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Nous soutenir
               <ArrowRight className="ml-2 w-5 h-5" />

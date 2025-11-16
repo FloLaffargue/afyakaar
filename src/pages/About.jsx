@@ -57,7 +57,7 @@ const About = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream-50">
         <div className="container mx-auto px-4">
           {/* Image du Sénégal */}
           <div className="max-w-5xl mx-auto mb-12">
@@ -111,7 +111,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-cream-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Notre Équipe</h2>
@@ -134,7 +134,7 @@ const About = () => {
       </section>
 
       {/* Domains Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Nos Domaines d'Action</h2>

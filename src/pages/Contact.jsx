@@ -50,7 +50,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactInfo.map((info, index) => {
@@ -136,7 +136,7 @@ const Contact = () => {
       </section>
 
       {/* Social Media Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-cream-100">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Suivez-nous sur les Réseaux Sociaux</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
