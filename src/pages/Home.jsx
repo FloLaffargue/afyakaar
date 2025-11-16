@@ -10,9 +10,17 @@ import {
   Target,
   Award,
   Calendar,
-  Store, Shirt
+  Store,
+  Shirt,
+  Sparkles,
+  Shield,
+  CheckCircle,
+  Globe,
+  Zap,
+  Lock
 } from 'lucide-react'
 import { images } from '../data/imageData'
+import Carousel from '../components/Carousel'
 
 const Home = () => {
   const missions = [
@@ -101,6 +109,58 @@ const Home = () => {
     }
   ]
 
+  const values = [
+    {
+      icon: Sparkles,
+      title: 'Notre Passion',
+      description: 'Un engagement sincère pour l\'Afrique',
+      color: 'from-yellow-400 to-orange-500',
+      bgColor: 'bg-yellow-50'
+    },
+    {
+      icon: Heart,
+      title: 'Solidarité',
+      description: 'Unis pour un impact durable',
+      color: 'from-blue-400 to-blue-600',
+      bgColor: 'bg-blue-50'
+    },
+    {
+      icon: Shield,
+      title: 'Responsabilité',
+      description: 'Transparence dans chaque action',
+      color: 'from-green-400 to-green-600',
+      bgColor: 'bg-green-50'
+    },
+    {
+      icon: CheckCircle,
+      title: 'Intégrité',
+      description: 'Honnêteté et éthique avant tout',
+      color: 'from-purple-400 to-purple-600',
+      bgColor: 'bg-purple-50'
+    },
+    {
+      icon: Globe,
+      title: 'Diversité',
+      description: 'Richesse de nos différences',
+      color: 'from-pink-400 to-pink-600',
+      bgColor: 'bg-pink-50'
+    },
+    {
+      icon: Zap,
+      title: 'Engagement',
+      description: 'Action concrète et déterminée',
+      color: 'from-red-400 to-red-600',
+      bgColor: 'bg-red-50'
+    },
+    {
+      icon: Lock,
+      title: 'Confiance',
+      description: 'Relation authentique et durable',
+      color: 'from-indigo-400 to-indigo-600',
+      bgColor: 'bg-indigo-50'
+    }
+  ]
+
   const education = {
     title: 'Impact sur l\'Éducation',
     subtitle: 'École de Danse et Chant',
@@ -110,51 +170,90 @@ const Home = () => {
     ]
   }
 
+  const carouselSlides = [
+    {
+      image: images.achievements.school,
+      title: 'Soutien Scolaire',
+      description: 'Fournitures scolaires et matériel éducatif pour les écoles de Saly'
+    },
+    {
+      image: images.achievements.petanque,
+      title: 'Tournoi de Pétanque',
+      description: '63 équipes participantes, promotion du sport et de la convivialité'
+    },
+    {
+      image: images.projects.dance,
+      title: 'École de Danse et Chant',
+      description: 'Développement des talents artistiques des enfants'
+    },
+    {
+      image: images.achievements.sports,
+      title: 'Équipement Sportif',
+      description: 'Dons de chaussures et équipements pour la Fédération d\'athlétisme'
+    },
+    {
+      image: images.projects.entrepreneurship,
+      title: 'Entrepreneuriat Local',
+      description: 'Soutien aux femmes entrepreneurs et développement économique'
+    }
+  ]
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 text-white py-20 md:py-32 overflow-hidden">
-        {/* Image de fond */}
-        <div className="absolute inset-0">
-          <img
-            src={images.hero.main}
-            alt={images.hero.alt}
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/90 via-primary-600/90 to-accent-600/90"></div>
+      {/* Carousel Section */}
+      <section className="bg-gray-50">
+        <Carousel slides={carouselSlides} />
+      </section>
+
+      {/* Nos Valeurs Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Association Humanitaire au Service de l'Afrique
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100">
-              Depuis 2015, nous œuvrons pour l'éducation, la santé, le sport et la culture au Sénégal
+          <div className="text-center mb-12">
+            <h2 className="section-title">Nos Valeurs</h2>
+            <p className="section-subtitle">
+              Les principes qui guident chacune de nos actions au service de l'Afrique
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-center">
-                Faire un don
-              </Link>
-              <Link to="/projects" className="border-2 border-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-300 text-center">
-                Découvrir nos projets
-              </Link>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl font-bold text-primary-500 mb-2">{stat.value}</div>
-                <div className="text-xl font-semibold text-gray-900 mb-2">{stat.label}</div>
-                <div className="text-gray-600">{stat.description}</div>
-              </div>
-            ))}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-6">
+            {values.map((value, index) => {
+              const Icon = value.icon
+              return (
+                <div
+                  key={index}
+                  className="group relative"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="card p-6 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-primary-200">
+                    {/* Icon with gradient background */}
+                    <div className={`${value.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-4 mx-auto relative overflow-hidden group-hover:scale-110 transition-transform duration-500`}>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                      <Icon className={`w-8 h-8 bg-gradient-to-br ${value.color} bg-clip-text text-transparent relative z-10 group-hover:text-white transition-all duration-500`} />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold mb-2 text-center text-gray-900 group-hover:text-primary-600 transition-colors duration-300">
+                      {value.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 text-center leading-relaxed">
+                      {value.description}
+                    </p>
+
+                    {/* Decorative element */}
+                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${value.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-lg`}></div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -218,15 +317,6 @@ const Home = () => {
                         {/* Overlay gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-                        {/* Badge avec emoji et numéro */}
-                        <div className="absolute top-4 left-4 flex items-center gap-2">
-                          <div className="bg-white text-primary-600 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
-                            {index + 1}
-                          </div>
-                          <div className="bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg">
-                            <span className="text-2xl">{achievement.icon}</span>
-                          </div>
-                        </div>
 
                         {/* Mois en bas de l'image */}
                         <div className="absolute bottom-4 left-4 right-4">
@@ -286,7 +376,7 @@ const Home = () => {
       </section>
 
       {/* Education Impact Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -359,22 +449,39 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section with Stats */}
       <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Votre Don Fait la Différence
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Rejoignez-nous dans notre mission pour construire un avenir meilleur pour l'Afrique
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Nous soutenir
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Votre Don Fait la Différence
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Rejoignez-nous dans notre mission pour construire un avenir meilleur pour l'Afrique
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center bg-white rounded-2xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-4 border-white/20">
+                <div className="text-6xl md:text-7xl font-black text-primary-600 mb-4">{stat.value}</div>
+                <div className="text-2xl font-bold text-gray-900 mb-3">{stat.label}</div>
+                <div className="text-gray-600 text-base">{stat.description}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Nous soutenir
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

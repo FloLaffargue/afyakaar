@@ -26,6 +26,13 @@ const Projects = () => {
       month: 'Avril-Mai'
     },
     {
+      icon: '👩‍💼',
+      title: 'Aide aux Femmes Entrepreneurs',
+      description: 'Accompagnement pour gagner en visibilité et contribuer à leur développement par l\'échange et l\'entraide',
+      image: images.projects.entrepreneurship,
+      month: 'Mai-Juin'
+    },
+    {
       icon: '⚕️',
       title: 'Don de Médicaments',
       description: 'Don de médicaments et de matériel pour les centres de soins',

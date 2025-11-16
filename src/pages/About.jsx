@@ -39,7 +39,7 @@ const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-500 to-accent-500 text-white py-24 md:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-500 to-accent-500 text-white py-16 overflow-hidden">
         {/* Image de fond */}
         <div className="absolute inset-0">
           <img
@@ -51,7 +51,7 @@ const About = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Qui Sommes-Nous ?</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Qui sommes-nous ?</h1>
           <p className="text-xl">Découvrez notre histoire et notre équipe</p>
         </div>
       </section>
