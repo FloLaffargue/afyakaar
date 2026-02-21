@@ -1,17 +1,17 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, Calendar, Tag, Newspaper } from 'lucide-react'
-import { getAllNews, getNewsById } from '../data/newsData'
+import { ArrowLeft, Calendar, Tag } from 'lucide-react'
+import { getNewsById } from '../data/newsData'
 
 const getCategoryColor = (category) => {
   const colors = {
-    'Événement': 'bg-blue-100 text-blue-800',
-    'Réalisation': 'bg-green-100 text-green-800',
-    'Éducation': 'bg-purple-100 text-purple-800',
-    'Culture': 'bg-pink-100 text-pink-800',
-    'Santé': 'bg-red-100 text-red-800',
-    'Sport': 'bg-yellow-100 text-yellow-800'
+    'Événement': { badge: 'bg-blue-100 text-blue-800', accent: 'border-blue-500' },
+    'Réalisation': { badge: 'bg-green-100 text-green-800', accent: 'border-green-500' },
+    'Éducation': { badge: 'bg-purple-100 text-purple-800', accent: 'border-purple-500' },
+    'Culture': { badge: 'bg-pink-100 text-pink-800', accent: 'border-pink-500' },
+    'Santé': { badge: 'bg-red-100 text-red-800', accent: 'border-red-500' },
+    'Sport': { badge: 'bg-yellow-100 text-yellow-800', accent: 'border-yellow-500' }
   }
-  return colors[category] || 'bg-gray-100 text-gray-800'
+  return colors[category] || { badge: 'bg-gray-100 text-gray-800', accent: 'border-gray-500' }
 }
 
 const formatDate = (dateString) => {
@@ -22,7 +22,6 @@ const formatDate = (dateString) => {
 const NewsDetail = () => {
   const { id } = useParams()
   const news = getNewsById(Number(id))
-  const allNews = getAllNews()
 
   if (!news) {
     return (
@@ -37,90 +36,111 @@ const NewsDetail = () => {
     )
   }
 
-  const currentIndex = allNews.findIndex((n) => n.id === news.id)
-  const prev = currentIndex < allNews.length - 1 ? allNews[currentIndex + 1] : null
-  const next = currentIndex > 0 ? allNews[currentIndex - 1] : null
+  const catStyle = getCategoryColor(news.category)
+  const contentParagraphs = Array.isArray(news.content) ? news.content : [news.content]
 
   return (
-    <div className="bg-gradient-to-br from-cream-50 to-cream-100 min-h-screen">
-      {/* Lien retour */}
-      <div className="container mx-auto px-4 pt-6 pb-2">
-        <Link to="/news" className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors">
-          <ArrowLeft className="w-4 h-4" />
-          Retour aux actualités
-        </Link>
-      </div>
-
-      {/* Contenu principal */}
-      <section className="py-8">
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="bg-gradient-to-r from-primary-500 to-accent-500 text-white py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl mb-8">
-              {news.image ? (
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="w-full h-64 sm:h-80 object-cover"
-                />
-              ) : (
-                <div className="w-full h-64 sm:h-80 bg-gradient-to-br from-primary-200 to-accent-200 flex items-center justify-center">
-                  <Newspaper className="w-20 h-20 text-primary-500 opacity-50" />
-                </div>
-              )}
-            </div>
-
-            {/* Badges */}
+          <div className="max-w-4xl mx-auto">
+            <Link to="/news" className="inline-flex items-center gap-2 text-white/80 hover:text-white font-medium mb-6 transition-colors">
+              <ArrowLeft className="w-4 h-4" />
+              Actualités
+            </Link>
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold ${getCategoryColor(news.category)}`}>
+              <span className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold ${catStyle.badge} shadow-sm`}>
                 <Tag className="w-3.5 h-3.5" />
                 {news.category}
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 bg-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full">
                 <Calendar className="w-3.5 h-3.5" />
                 {formatDate(news.date)}
               </span>
             </div>
-
-            {/* Titre */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{news.title}</h1>
-
-            {/* Contenu */}
-            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-              <p>{news.content}</p>
-            </div>
+            <h1 className="text-3xl md:text-5xl font-bold">{news.title}</h1>
           </div>
         </div>
       </section>
 
-      {/* Navigation prev/next */}
-      <section className="pb-12">
+      {/* Chapeau / introduction */}
+      <section className="bg-white border-b border-cream-200">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto flex items-center justify-between gap-4 border-t border-cream-200 pt-6">
-            {prev ? (
-              <Link
-                to={`/news/${prev.id}`}
-                className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span className="hidden sm:inline">{prev.title}</span>
-                <span className="sm:hidden">Précédent</span>
-              </Link>
-            ) : (
-              <div />
-            )}
-            {next ? (
-              <Link
-                to={`/news/${next.id}`}
-                className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors text-right"
-              >
-                <span className="hidden sm:inline">{next.title}</span>
-                <span className="sm:hidden">Suivant</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            ) : (
-              <div />
-            )}
+          <div className={`max-w-4xl mx-auto py-10 border-l-4 ${catStyle.accent} pl-6`}>
+            <p className="text-gray-800 text-xl md:text-2xl leading-relaxed font-medium italic">
+              {contentParagraphs[0]}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Corps de l'article */}
+      {contentParagraphs.length > 1 && (
+        <section className="py-14 bg-cream-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                {/* Contenu principal */}
+                <div className="lg:col-span-8 space-y-6">
+                  {contentParagraphs.slice(1).map((paragraph, index) => (
+                    <p key={index} className="text-gray-700 text-lg leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Encart latéral */}
+                <aside className="lg:col-span-4">
+                  <div className="bg-white rounded-2xl shadow-md p-6 sticky top-8">
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Informations</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0">
+                          <Calendar className="w-5 h-5 text-primary-600" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">Date</p>
+                          <p className="text-gray-900 font-medium">{formatDate(news.date)}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-accent-50 flex items-center justify-center flex-shrink-0">
+                          <Tag className="w-5 h-5 text-accent-600" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">Catégorie</p>
+                          <p className="text-gray-900 font-medium">{news.category}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-t border-cream-200 mt-6 pt-6">
+                      <Link
+                        to="/contact"
+                        className="block w-full text-center btn-primary py-3"
+                      >
+                        Nous soutenir
+                      </Link>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Barre de retour */}
+      <section className="py-8 bg-cream-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Link
+              to="/news"
+              className="inline-flex items-center gap-2 btn-primary py-3 px-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Toutes les actualités
+            </Link>
           </div>
         </div>
       </section>

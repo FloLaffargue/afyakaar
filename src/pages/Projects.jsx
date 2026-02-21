@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Trophy, GraduationCap, Music, Briefcase, HeartPulse, Users, Heart } from 'lucide-react'
 import { images } from '../data/imageData'
-import { projects2026, categories as categoriesData, getCategoryById } from '../data/projectsData'
+import { allProjects, getCategoryById, getProjectYears } from '../data/projectsData'
 
 const iconMap = { Trophy, GraduationCap, Music, Briefcase, HeartPulse }
 
 const Projects = () => {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
+  const years = getProjectYears()
+  const [selectedYear, setSelectedYear] = useState(years[0])
+
+  const filteredProjects = allProjects.filter((p) => p.year === selectedYear)
 
   return (
     <div>
@@ -24,24 +26,28 @@ const Projects = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Nos Projets 2026</h1>
-          <p className="text-xl mb-8 max-w-2xl">Des actions concrètes pour un avenir meilleur au Sénégal</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">Nos Projets</h1>
+          <p className="text-xl max-w-2xl">Des actions concrètes pour un avenir meilleur au Sénégal</p>
+        </div>
+      </section>
 
-          {/* Pastilles de domaine */}
-          <div className="flex flex-wrap gap-3">
-            {categoriesData.map((cat) => {
-              const Icon = iconMap[cat.icon]
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => scrollTo(cat.id)}
-                  className="flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm px-4 py-2 rounded-full transition-all duration-200 text-sm font-medium"
-                >
-                  {Icon && <Icon className="w-4 h-4" />}
-                  {cat.label}
-                </button>
-              )
-            })}
+      {/* Filtre par année */}
+      <section className="py-8 bg-cream-50 border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {years.map((year) => (
+              <button
+                key={year}
+                onClick={() => setSelectedYear(year)}
+                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                  selectedYear === year
+                    ? 'bg-primary-500 text-white shadow-lg'
+                    : 'bg-cream-200 text-gray-700 hover:bg-cream-300'
+                }`}
+              >
+                {year}
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -50,12 +56,14 @@ const Projects = () => {
       <section className="py-16 bg-gradient-to-br from-cream-50 to-cream-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="section-title">Projets 2026</h2>
-            <p className="section-subtitle">Nos initiatives pour l'année à venir</p>
+            <h2 className="section-title">Projets {selectedYear}</h2>
+            <p className="section-subtitle">
+              {selectedYear === years[0] ? 'Nos initiatives pour l\'année en cours' : `Nos réalisations de ${selectedYear}`}
+            </p>
           </div>
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects2026.map((project, index) => {
+            {filteredProjects.map((project, index) => {
               const cat = getCategoryById(project.category)
               const Icon = iconMap[cat.icon]
 

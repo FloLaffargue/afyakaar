@@ -384,6 +384,37 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Nos Partenaires */}
+      <section className="py-16 bg-cream-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Nos Partenaires</h2>
+            <p className="section-subtitle">
+              Ils nous soutiennent dans nos actions
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+            {[
+              { name: 'Mairie de Mandelieu', initials: 'MM' },
+              { name: 'Fondation Solidarité', initials: 'FS' },
+              { name: 'Sport Pour Tous', initials: 'SPT' },
+              { name: 'Éducation Sans Frontières', initials: 'ESF' },
+              { name: 'Santé Afrique', initials: 'SA' },
+            ].map((partner, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
+                  <span className="text-xl font-bold text-primary-600">{partner.initials}</span>
+                </div>
+                <p className="text-sm font-semibold text-gray-700 text-center">{partner.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section with Stats */}
       <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">
         <div className="container mx-auto px-4">

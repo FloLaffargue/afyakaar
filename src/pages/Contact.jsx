@@ -35,14 +35,14 @@ const Contact = () => {
       <section className="relative bg-gradient-to-r from-primary-500 to-accent-500 text-white py-16 overflow-hidden">
         {/* Image de fond */}
         <div className="absolute inset-0">
-          <img 
-            src={images.contact.hero} 
+          <img
+            src={images.contact.hero}
             alt="Contact Af Yakaar"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/90 to-accent-500/90"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contactez-Nous</h1>
           <p className="text-xl">Ensemble, construisons un avenir meilleur pour l'Afrique</p>
@@ -76,7 +76,7 @@ const Contact = () => {
                 <Heart className="w-12 h-12 text-primary-500 fill-primary-500" />
               </div>
               <h2 className="text-3xl font-bold text-center mb-6">Faire un Don</h2>
-              
+
               <div className="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-lg mb-8">
                 <h3 className="text-xl font-bold mb-3 flex items-center">
                   <Info className="w-6 h-6 mr-2 text-primary-600" />
@@ -92,8 +92,8 @@ const Contact = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-3">Comment faire un don ?</h3>
                   <p className="text-gray-700 mb-4">
-                    Pour effectuer un don, vous pouvez nous contacter par email ou téléphone. 
-                    Nous vous fournirons toutes les informations nécessaires et vous recevrez un reçu fiscal 
+                    Pour effectuer un don, vous pouvez nous contacter par email ou téléphone.
+                    Nous vous fournirons toutes les informations nécessaires et vous recevrez un reçu fiscal
                     pour votre déclaration d'impôts.
                   </p>
                 </div>
@@ -136,7 +136,7 @@ const Contact = () => {
       </section>
 
       {/* Social Media Section */}
-      <section className="py-16 bg-cream-100">
+      <section className="py-16 bg-cream-200">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Suivez-nous sur les Réseaux Sociaux</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">

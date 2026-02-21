@@ -90,9 +90,9 @@ const About = () => {
               </div>
             </div>
 
-            {/* Texte centré */}
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+            {/* Texte */}
+            <div className="max-w-5xl mx-auto">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-sm font-medium px-4 py-2 rounded-full">
                   <Calendar className="w-4 h-4" /> Depuis septembre 2015
                 </span>
@@ -101,15 +101,15 @@ const About = () => {
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Une association au service de l'Afrique</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-left">Une association au service de l'Afrique</h2>
 
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              <p className="text-gray-700 text-lg leading-relaxed mb-4 text-left">
                 Af Yakaar est une association humanitaire loi 1901 fondée en septembre 2015 à Mandelieu-la-Napoule. Portée par des bénévoles passionnés, elle s'engage pour l'amélioration des conditions de vie des populations en Afrique, principalement au Sénégal.
               </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              <p className="text-gray-700 text-lg leading-relaxed mb-4 text-left">
                 Notre action repose sur cinq piliers : l'éducation, la santé, le sport, la culture et le soutien à l'entrepreneuriat local. Qu'il s'agisse de fournir du matériel scolaire aux écoles de Saly, d'organiser des tournois de pétanque fédérateurs, de développer une école de danse pour les enfants ou d'accompagner des femmes entrepreneurs, chaque projet est pensé pour créer un impact durable et concret.
               </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8">
+              <p className="text-gray-700 text-lg leading-relaxed mb-8 text-left">
                 Nous croyons en un développement équitable, construit sur l'échange et la solidarité entre la France et le Sénégal. Chaque euro donné bénéficie directement aux communautés que nous soutenons.
               </p>
 
