@@ -3,9 +3,21 @@ import { images } from '../data/imageData'
 
 const About = () => {
   const team = [
-    { name: 'Nathalie Prophète', role: 'Présidente' },
-    { name: 'Sébastien Prophète', role: 'Vice-président' },
-    { name: 'Andy Armbruster', role: 'Secrétaire' }
+    {
+      name: 'Nathalie Prophète',
+      role: 'Présidente',
+      description: 'Fondatrice d\'Af Yakaar, Nathalie porte l\'association depuis ses débuts en 2015. Originaire du Sénégal et installée à Mandelieu, elle met son énergie et sa connaissance du terrain au service de chaque projet. C\'est elle qui tisse les liens entre les bénévoles français et les communautés sénégalaises.',
+    },
+    {
+      name: 'Sébastien Prophète',
+      role: 'Vice-président',
+      description: 'Pilier de l\'association, Sébastien coordonne la logistique des événements et des missions sur le terrain. De l\'organisation des tournois de pétanque à l\'acheminement du matériel scolaire, il veille à ce que chaque action se concrétise efficacement.',
+    },
+    {
+      name: 'Andy Armbruster',
+      role: 'Secrétaire',
+      description: 'Andy assure le suivi administratif et la communication de l\'association. Rigoureux et impliqué, il gère les relations avec les partenaires, la rédaction des comptes-rendus et la visibilité d\'Af Yakaar auprès du public et des institutions.',
+    }
   ]
 
   const domains = [
@@ -59,59 +71,60 @@ const About = () => {
       {/* About Section */}
       <section className="py-16 bg-cream-50">
         <div className="container mx-auto px-4">
-          {/* Image du Sénégal */}
-          <div className="max-w-5xl mx-auto mb-12">
-            <div className="rounded-xl overflow-hidden shadow-2xl">
-              <img
-                src={images.achievements.school3}
-                alt="Sénégal - Af Yakaar"
-                className="w-full h-64 md:h-96 object-cover"
-                style={{'height': '500px'}}
-              />
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="card p-6">
-                <Calendar className="w-12 h-12 text-primary-500 mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Fondée en Septembre 2015</h3>
-                <p className="text-gray-600">
-                  Plus de 9 ans d'engagement au service des communautés africaines
-                </p>
+          <div className="max-w-6xl mx-auto">
+            {/* Deux images côte à côte */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={images.achievements.school}
+                  alt="École soutenue par Af Yakaar"
+                  className="w-full h-64 sm:h-80 object-cover"
+                />
               </div>
-              <div className="card p-6">
-                <MapPin className="w-12 h-12 text-accent-500 mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Basée à Mandelieu</h3>
-                <p className="text-gray-600">
-                  Association humanitaire loi 1901, intervenant principalement au Sénégal
-                </p>
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={images.achievements.school3}
+                  alt="Af Yakaar au Sénégal"
+                  className="w-full h-64 sm:h-80 object-cover"
+                />
               </div>
             </div>
 
-            <div className="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-lg mb-12">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Notre Vision</h3>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Af Yakaar est une association humanitaire dédiée à l'amélioration des conditions de vie
-                des populations en Afrique, principalement au Sénégal. Nous croyons en un développement
-                durable et équitable, centré sur l'éducation, la santé, le sport et la culture.
-              </p>
-            </div>
+            {/* Texte centré */}
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+                <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-sm font-medium px-4 py-2 rounded-full">
+                  <Calendar className="w-4 h-4" /> Depuis septembre 2015
+                </span>
+                <span className="inline-flex items-center gap-2 bg-accent-50 text-accent-700 text-sm font-medium px-4 py-2 rounded-full">
+                  <MapPin className="w-4 h-4" /> Mandelieu
+                </span>
+              </div>
 
-            <div className="bg-accent-50 border-l-4 border-accent-500 p-6 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Avantage Fiscal</h3>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                En tant qu'association loi 1901, vos dons à Af Yakaar ouvrent droit à une
-                <span className="font-bold text-accent-600"> réduction d'impôt de 66%</span>.
-                Chaque euro donné a un impact direct sur nos projets et bénéficie aux communautés que nous soutenons.
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Une association au service de l'Afrique</h2>
+
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                Af Yakaar est une association humanitaire loi 1901 fondée en septembre 2015 à Mandelieu-la-Napoule. Portée par des bénévoles passionnés, elle s'engage pour l'amélioration des conditions de vie des populations en Afrique, principalement au Sénégal.
               </p>
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                Notre action repose sur cinq piliers : l'éducation, la santé, le sport, la culture et le soutien à l'entrepreneuriat local. Qu'il s'agisse de fournir du matériel scolaire aux écoles de Saly, d'organiser des tournois de pétanque fédérateurs, de développer une école de danse pour les enfants ou d'accompagner des femmes entrepreneurs, chaque projet est pensé pour créer un impact durable et concret.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                Nous croyons en un développement équitable, construit sur l'échange et la solidarité entre la France et le Sénégal. Chaque euro donné bénéficie directement aux communautés que nous soutenons.
+              </p>
+
+              <div className="bg-accent-50 border-l-4 border-accent-500 p-5 rounded-lg text-left">
+                <p className="text-gray-700 text-base leading-relaxed">
+                  <span className="font-bold text-accent-600">Avantage fiscal :</span> en tant qu'association loi 1901, vos dons ouvrent droit à une réduction d'impôt de 66%.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-cream-100">
+      <section className="py-16 bg-cream-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Notre Équipe</h2>
@@ -119,14 +132,19 @@ const About = () => {
               Des personnes engagées pour faire la différence
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-8">
             {team.map((member, index) => (
-              <div key={index} className="card p-8 text-center">
-                <div className="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-12 h-12 text-primary-600" />
+              <div key={index} className="card flex flex-col sm:flex-row items-center sm:items-start gap-6 p-8">
+                <div className="flex-shrink-0">
+                  <div className="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center">
+                    <Users className="w-12 h-12 text-primary-600" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                <p className="text-primary-600 font-semibold">{member.role}</p>
+                <div className="text-center sm:text-left">
+                  <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                  <p className="text-primary-600 font-semibold mb-3">{member.role}</p>
+                  <p className="text-gray-600 leading-relaxed">{member.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -134,25 +152,25 @@ const About = () => {
       </section>
 
       {/* Domains Section */}
-      <section className="py-16 bg-cream-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Nos Domaines d'Action</h2>
-            <p className="section-subtitle">
-              Une approche globale pour un impact durable
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {domains.map((domain, index) => (
-              <div key={index} className="card p-6 text-center hover:scale-105 transition-transform duration-300">
-                <div className="text-5xl mb-4">{domain.icon}</div>
-                <h3 className="text-lg font-bold mb-2">{domain.title}</h3>
-                <p className="text-gray-600 text-sm">{domain.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/*<section className="py-16 bg-cream-50">*/}
+      {/*  <div className="container mx-auto px-4">*/}
+      {/*    <div className="text-center mb-12">*/}
+      {/*      <h2 className="section-title">Nos Domaines d'Action</h2>*/}
+      {/*      <p className="section-subtitle">*/}
+      {/*        Une approche globale pour un impact durable*/}
+      {/*      </p>*/}
+      {/*    </div>*/}
+      {/*    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">*/}
+      {/*      {domains.map((domain, index) => (*/}
+      {/*        <div key={index} className="card p-6 text-center hover:scale-105 transition-transform duration-300">*/}
+      {/*          <div className="text-5xl mb-4">{domain.icon}</div>*/}
+      {/*          <h3 className="text-lg font-bold mb-2">{domain.title}</h3>*/}
+      {/*          <p className="text-gray-600 text-sm">{domain.description}</p>*/}
+      {/*        </div>*/}
+      {/*      ))}*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* Quote Section */}
       <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">

@@ -6,6 +6,8 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import News from './pages/News'
 import Contact from './pages/Contact'
+import ProjectDetail from './pages/ProjectDetail'
+import NewsDetail from './pages/NewsDetail'
 
 function App() {
   const basename = import.meta.env.PROD ? '/afyakaar' : '/'
@@ -19,7 +21,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/news" element={<News />} />
+            <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

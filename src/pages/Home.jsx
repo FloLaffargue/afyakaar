@@ -3,23 +3,17 @@ import {
   GraduationCap,
   Heart,
   Trophy,
-  Music,
   TrendingUp,
   ArrowRight,
-  Users,
-  Target,
-  Award,
   Calendar,
   Store,
   Shirt,
-  Sparkles,
-  Shield,
-  CheckCircle,
   Globe,
-  Zap,
-  Lock
+  MapPin,
+  Quote
 } from 'lucide-react'
 import { images } from '../data/imageData'
+import { projects2026, getCategoryById } from '../data/projectsData'
 import Carousel from '../components/Carousel'
 
 const Home = () => {
@@ -60,29 +54,14 @@ const Home = () => {
     { value: '9', label: 'Années d\'Action', description: 'Depuis 2015 au service de l\'Afrique' }
   ]
 
-  const achievements = [
-    {
-      title: 'Aide aux écoles de Saly',
-      description: 'Fournitures scolaires, doudous et matelas pour la sieste des enfants',
-      image: images.achievements.school,
-      icon: '🏫',
-      month: 'Janvier-Février'
-    },
-    {
-      title: 'Tournoi de Pétanque',
-      description: '63 équipes participantes, dons de boules, accessoires et équipements complets',
-      image: images.achievements.petanque,
-      icon: '🎯',
-      month: 'Mars'
-    },
-    {
-      title: 'Équipement Sportif',
-      description: 'Dons de chaussures d\'athlétisme et baskets pour la Fédération sénégalaise d\'athlétisme basée à MBOUR',
-      image: images.achievements.sports,
-      icon: '👟',
-      month: 'Juin-Juillet'
+  const featuredProjects = projects2026.slice(0, 3).map((p) => {
+    const cat = getCategoryById(p.category)
+    return {
+      ...p,
+      categoryLabel: cat.label,
+      categoryColor: cat.color,
     }
-  ]
+  })
 
   const entrepreneurship = [
     {
@@ -106,58 +85,6 @@ const Home = () => {
       description: 'Création d\'espaces pour femmes entrepreneurs',
       color: 'text-green-500',
       bgColor: 'bg-green-50'
-    }
-  ]
-
-  const values = [
-    {
-      icon: Sparkles,
-      title: 'Notre Passion',
-      description: 'Un engagement sincère pour l\'Afrique',
-      color: 'from-yellow-400 to-orange-500',
-      bgColor: 'bg-yellow-50'
-    },
-    {
-      icon: Heart,
-      title: 'Solidarité',
-      description: 'Unis pour un impact durable',
-      color: 'from-blue-400 to-blue-600',
-      bgColor: 'bg-blue-50'
-    },
-    {
-      icon: Shield,
-      title: 'Responsabilité',
-      description: 'Transparence dans chaque action',
-      color: 'from-green-400 to-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Intégrité',
-      description: 'Honnêteté et éthique avant tout',
-      color: 'from-purple-400 to-purple-600',
-      bgColor: 'bg-purple-50'
-    },
-    {
-      icon: Globe,
-      title: 'Diversité',
-      description: 'Richesse de nos différences',
-      color: 'from-pink-400 to-pink-600',
-      bgColor: 'bg-pink-50'
-    },
-    {
-      icon: Zap,
-      title: 'Engagement',
-      description: 'Action concrète et déterminée',
-      color: 'from-red-400 to-red-600',
-      bgColor: 'bg-red-50'
-    },
-    {
-      icon: Lock,
-      title: 'Confiance',
-      description: 'Relation authentique et durable',
-      color: 'from-indigo-400 to-indigo-600',
-      bgColor: 'bg-indigo-50'
     }
   ]
 
@@ -205,55 +132,47 @@ const Home = () => {
         <Carousel slides={carouselSlides} />
       </section>
 
-      {/* Nos Valeurs Section */}
-      <section className="py-16 bg-gradient-to-br from-cream-100 via-cream-50 to-cream-100 relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl"></div>
-        </div>
+      {/* Présentation de l'Association */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-cream-100 via-cream-50 to-cream-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+            {/* Image */}
+            <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={images.achievements.school3}
+                alt="Af Yakaar au Sénégal"
+                className="w-full h-96 lg:h-[550px] object-cover"
+              />
+            </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Nos Valeurs</h2>
-            <p className="section-subtitle">
-              Les principes qui guident chacune de nos actions au service de l'Afrique
-            </p>
-          </div>
-
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-6">
-            {values.map((value, index) => {
-              const Icon = value.icon
-              return (
-                <div
-                  key={index}
-                  className="group relative"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="card p-6 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-primary-200">
-                    {/* Icon with gradient background */}
-                    <div className={`${value.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-4 mx-auto relative overflow-hidden group-hover:scale-110 transition-transform duration-500`}>
-                      <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                      <Icon className={`w-8 h-8 bg-gradient-to-br ${value.color} bg-clip-text text-transparent relative z-10 group-hover:text-white transition-all duration-500`} />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg font-bold mb-2 text-center text-gray-900 group-hover:text-primary-600 transition-colors duration-300">
-                      {value.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 text-center leading-relaxed">
-                      {value.description}
-                    </p>
-
-                    {/* Decorative element */}
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${value.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-lg`}></div>
-                  </div>
-                </div>
-              )
-            })}
+            {/* Texte */}
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">L'espoir en action, du sud de la France au Sénégal</h2>
+              <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-5">
+                Depuis plus de <span className="font-semibold text-primary-600">10 ans</span>, nous tissons un pont entre Mandelieu et le Sénégal. Chaque projet que nous portons — un tournoi de pétanque, une salle de classe équipée, un cours de danse — naît d'une conviction simple : la solidarité change des vies, des deux côtés de la Méditerranée.
+              </p>
+              <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8">
+                Af Yakaar, c'est avant tout une aventure humaine portée par des bénévoles passionnés, où chaque don se transforme en impact concret sur le terrain.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-base font-medium px-4 py-2 rounded-full">
+                  <MapPin className="w-4 h-4" /> Mandelieu
+                </span>
+                <span className="inline-flex items-center gap-2 bg-accent-50 text-accent-700 text-base font-medium px-4 py-2 rounded-full">
+                  <Calendar className="w-4 h-4" /> Depuis 2015
+                </span>
+                <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-base font-medium px-4 py-2 rounded-full">
+                  <Globe className="w-4 h-4" /> Sénégal
+                </span>
+              </div>
+              <Link
+                to="/about"
+                className="inline-flex items-center text-lg text-primary-600 hover:text-primary-700 font-semibold transition-colors duration-200"
+              >
+                Découvrir notre histoire
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -284,93 +203,71 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Achievements Section - Timeline */}
+      {/* Nos Actions */}
       <section className="py-16 bg-gradient-to-br from-cream-50 to-cream-100">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Nos Réalisations en 2025</h2>
+          <div className="text-center mb-12">
+            <h2 className="section-title">Nos Actions</h2>
             <p className="section-subtitle">
-              Des actions concrètes pour un impact réel
+              Les projets en cours que nous portons
             </p>
           </div>
 
-          {/* Timeline */}
-          <div className="max-w-6xl mx-auto">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="relative mb-16 last:mb-0">
-                {/* Ligne verticale */}
-                {index !== achievements.length - 1 && (
-                  <div className="absolute left-8 md:left-1/2 top-32 md:top-40 w-0.5 h-full bg-gradient-to-b from-primary-500 to-accent-500 transform md:-translate-x-1/2 z-0"></div>
-                )}
-
-                {/* Contenu Timeline */}
-                <div className={`flex flex-col md:flex-row gap-8 items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  {/* Image avec overlay */}
-                  <div className="w-full md:w-5/12 relative">
-                    <div className="rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 group">
-                      <div className="relative">
-                        <img
-                          src={achievement.image}
-                          alt={achievement.title}
-                          className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        {/* Overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-
-                        {/* Mois en bas de l'image */}
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
-                            <div className="flex items-center text-primary-600">
-                              <Calendar className="w-4 h-4 mr-2" />
-                              <span className="font-bold text-sm">{achievement.month} 2025</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Point central avec icône */}
-                  <div className="hidden md:flex w-2/12 justify-center relative z-10">
-                    <div className="relative">
-                      <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white">
-                        <Award className="w-10 h-10 text-white" />
-                      </div>
-                      {/* Pulse effect */}
-                      <div className="absolute inset-0 w-20 h-20 bg-primary-500 rounded-full animate-ping opacity-20"></div>
-                    </div>
-                  </div>
-
-                  {/* Contenu texte */}
-                  <div className="w-full md:w-5/12">
-                    <div className="card p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-l-4 border-accent-500">
-                      {/* Badge 2025 */}
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{achievement.title}</h3>
-
-                      <p className="text-gray-700 leading-relaxed text-lg">{achievement.description}</p>
-
-                      {/* Indicateur mobile */}
-                      <div className="md:hidden mt-6 pt-6 border-t border-gray-200">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-500">Réalisation {index + 1}/{achievements.length}</span>
-                          <div className="flex gap-1">
-                            {achievements.map((_, i) => (
-                              <div
-                                key={i}
-                                className={`w-2 h-2 rounded-full ${
-                                  i === index ? 'bg-accent-500 w-6' : 'bg-gray-300'
-                                } transition-all duration-300`}
-                              ></div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {featuredProjects.map((project, index) => (
+              <Link
+                key={index}
+                to={`/projects/${project.slug}`}
+                className="card group flex flex-col hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-semibold shadow">
+                    <Calendar className="w-3 h-3" />
+                    {project.month}
                   </div>
                 </div>
-              </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <span className={`self-start inline-flex items-center ${project.categoryColor} text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide mb-3`}>
+                    {project.categoryLabel}
+                  </span>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1">{project.description}</p>
+                  {project.donationUrl && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      <div className="bg-gradient-to-r from-accent-50 to-primary-50 rounded-lg p-3 flex items-center gap-3">
+                        <div className="bg-gradient-to-br from-accent-500 to-accent-600 w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                          <Heart className="w-4 h-4 text-white fill-white" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-[11px] uppercase tracking-wider font-semibold text-accent-600">Cagnotte en ligne</p>
+                          {project.donationGoal && (
+                            <p className="text-base font-bold text-gray-900">
+                              {project.donationGoal.toLocaleString('fr-FR')}&nbsp;&euro;
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </Link>
             ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/projects"
+              className="inline-flex items-center btn-primary text-lg py-3 px-8"
+            >
+              Voir tous nos projets
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -378,19 +275,19 @@ const Home = () => {
       {/* Education Impact Section */}
       <section className="py-16 bg-cream-200">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
               {/* Image */}
-              <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="lg:col-span-3 rounded-xl overflow-hidden shadow-2xl">
                 <img
                   src={images.projects.dance}
                   alt="École de danse et chant"
-                  className="w-full h-full object-cover"
+                  className="w-full h-80 lg:h-[450px] object-cover"
                 />
               </div>
 
               {/* Contenu */}
-              <div className="card p-8">
+              <div className="lg:col-span-2 card p-8">
                 <div className="flex items-center justify-center lg:justify-start mb-6">
                   <div className="bg-primary-100 p-4 rounded-full">
                     <GraduationCap className="w-12 h-12 text-primary-600" />
@@ -445,6 +342,44 @@ const Home = () => {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Le mot de la présidente */}
+      <section className="py-16 md:py-20 bg-cream-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="section-title text-center mb-12">Le Mot de la Présidente</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+              {/* Photo */}
+              <div className="lg:col-span-2 flex flex-col items-center">
+                <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-200">
+                  <img
+                    src="https://placehold.co/400x400/d4a574/ffffff?text=Présidente"
+                    alt="La présidente d'Af Yakaar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="mt-4 text-lg font-bold text-gray-900">La Présidente</p>
+                <p className="text-primary-600 font-medium">Fondatrice d'Af Yakaar</p>
+              </div>
+
+              {/* Citation */}
+              <div className="lg:col-span-3">
+                <div className="relative bg-white rounded-2xl shadow-lg p-8 md:p-10">
+                  <Quote className="absolute top-4 left-4 w-10 h-10 text-primary-200" />
+                  <blockquote className="relative z-10">
+                    <p className="text-gray-700 text-lg md:text-xl leading-relaxed italic mb-6">
+                      Af Yakaar est né d'un rêve partagé : celui de créer un lien vivant entre la France et le Sénégal. Chaque action que nous menons, qu'il s'agisse d'équiper une école, d'organiser un tournoi de pétanque ou de soutenir une femme entrepreneur, porte en elle la conviction que la solidarité n'a pas de frontières. Ce qui me touche le plus, c'est de voir les sourires des enfants et la fierté des familles que nous accompagnons. C'est cette énergie qui nous pousse à aller toujours plus loin.
+                    </p>
+                    <footer className="border-t border-cream-200 pt-4">
+                      <p className="text-primary-600 font-semibold">— La Présidente d'Af Yakaar</p>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

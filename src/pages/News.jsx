@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Calendar, Tag, Newspaper } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Calendar, Tag, Newspaper, ArrowRight } from 'lucide-react'
 import { getAllNews } from '../data/newsData'
 
 const News = () => {
@@ -100,9 +101,13 @@ const News = () => {
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-900">{news.title}</h3>
                     <p className="text-gray-600 mb-4">{news.excerpt}</p>
-                    <div className="border-t pt-4">
-                      <p className="text-gray-700">{news.content}</p>
-                    </div>
+                    <Link
+                      to={`/news/${news.id}`}
+                      className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                    >
+                      Lire la suite
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </article>
               ))}
