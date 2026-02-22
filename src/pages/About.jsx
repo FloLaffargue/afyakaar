@@ -6,16 +6,19 @@ const About = () => {
     {
       name: 'Nathalie Prophète',
       role: 'Présidente',
+      photo: images.team.nathalie,
       description: 'Fondatrice d\'Af Yakaar, Nathalie porte l\'association depuis ses débuts en 2015. Originaire du Sénégal et installée à Mandelieu, elle met son énergie et sa connaissance du terrain au service de chaque projet. C\'est elle qui tisse les liens entre les bénévoles français et les communautés sénégalaises.',
     },
     {
       name: 'Sébastien Prophète',
       role: 'Vice-président',
+      photo: images.team.sebastien,
       description: 'Pilier de l\'association, Sébastien coordonne la logistique des événements et des missions sur le terrain. De l\'organisation des tournois de pétanque à l\'acheminement du matériel scolaire, il veille à ce que chaque action se concrétise efficacement.',
     },
     {
       name: 'Andy Armbruster',
       role: 'Secrétaire',
+      photo: images.team.andy,
       description: 'Andy assure le suivi administratif et la communication de l\'association. Rigoureux et impliqué, il gère les relations avec les partenaires, la rédaction des comptes-rendus et la visibilité d\'Af Yakaar auprès du public et des institutions.',
     }
   ]
@@ -76,14 +79,14 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={images.achievements.school}
+                  src={images.about.about1}
                   alt="École soutenue par Af Yakaar"
                   className="w-full h-64 sm:h-80 object-cover"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={images.achievements.school3}
+                  src={images.about.about2}
                   alt="Af Yakaar au Sénégal"
                   className="w-full h-64 sm:h-80 object-cover"
                 />
@@ -132,19 +135,15 @@ const About = () => {
               Des personnes engagées pour faire la différence
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => (
-              <div key={index} className="card flex flex-col sm:flex-row items-center sm:items-start gap-6 p-8">
-                <div className="flex-shrink-0">
-                  <div className="bg-primary-100 w-24 h-24 rounded-full flex items-center justify-center">
-                    <Users className="w-12 h-12 text-primary-600" />
-                  </div>
+              <div key={index} className="card p-8 text-center flex flex-col items-center">
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg ring-4 ring-primary-100 mb-5">
+                  <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
                 </div>
-                <div className="text-center sm:text-left">
-                  <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                  <p className="text-primary-600 font-semibold mb-3">{member.role}</p>
-                  <p className="text-gray-600 leading-relaxed">{member.description}</p>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                <p className="text-primary-600 font-semibold mb-4">{member.role}</p>
+                <p className="text-gray-600 leading-relaxed text-sm">{member.description}</p>
               </div>
             ))}
           </div>

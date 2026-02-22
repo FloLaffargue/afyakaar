@@ -5,6 +5,11 @@ import school4 from '../../public/images/school_4.jpg'
 import femmes_auto from '../../public/images/femmes_auto.jpg'
 import nathalie2 from '../../public/images/nathalie2.jpg'
 import school from '../../src/assets/school.png'
+import nathalie from '../../public/images/team/nathalie.png'
+import sebastien from '../../public/images/team/sebastien.png'
+import andy from '../../public/images/team/andy.png'
+import about1 from '../../public/images/about1.jpg'
+import about2 from '../../public/images/about2.jpg'
 import school2 from '../../src/assets/school_2.jpg'
 import petanque from '../../src/assets/petanque.jpg'
 import sports from '../../src/assets/sports.png'
@@ -14,6 +19,11 @@ import health from '../../src/assets/health.png'
 import entrepreneurship from '../assets/entrepreneurship.png'
 
 export const images = {
+  team: {
+    nathalie,
+    sebastien,
+    andy
+  },
   home: {
     hero,
     home2,
@@ -44,6 +54,8 @@ export const images = {
 
   // Images pour la page À propos
   about: {
+    about1,
+    about2,
     hero: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80',
     team: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80',
     senegal: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80'
