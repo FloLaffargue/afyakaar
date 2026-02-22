@@ -10,6 +10,7 @@ import sebastien from '../../public/images/team/sebastien.png'
 import andy from '../../public/images/team/andy.png'
 import about1 from '../../public/images/about1.jpg'
 import about2 from '../../public/images/about2.jpg'
+import about3 from '../../public/images/about3.jpg'
 import school2 from '../../src/assets/school_2.jpg'
 import petanque from '../../src/assets/petanque.jpg'
 import sports from '../../src/assets/sports.png'
@@ -56,6 +57,7 @@ export const images = {
   about: {
     about1,
     about2,
+    about3,
     hero: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80',
     team: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80',
     senegal: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80'

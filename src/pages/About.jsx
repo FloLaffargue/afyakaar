@@ -1,4 +1,4 @@
-import { Users, Calendar, MapPin, Target } from 'lucide-react'
+import { Calendar, MapPin, Quote } from 'lucide-react'
 import { images } from '../data/imageData'
 
 const About = () => {
@@ -7,19 +7,19 @@ const About = () => {
       name: 'Nathalie Prophète',
       role: 'Présidente',
       photo: images.team.nathalie,
-      description: 'Fondatrice d\'Af Yakaar, Nathalie porte l\'association depuis ses débuts en 2015. Originaire du Sénégal et installée à Mandelieu, elle met son énergie et sa connaissance du terrain au service de chaque projet. C\'est elle qui tisse les liens entre les bénévoles français et les communautés sénégalaises.',
+      description: 'Assure la communication avec les partenaires locaux, la recherche de financement',
     },
     {
       name: 'Sébastien Prophète',
       role: 'Vice-président',
       photo: images.team.sebastien,
-      description: 'Pilier de l\'association, Sébastien coordonne la logistique des événements et des missions sur le terrain. De l\'organisation des tournois de pétanque à l\'acheminement du matériel scolaire, il veille à ce que chaque action se concrétise efficacement.',
+      description: 'Assure la gestion des projets sportifs et culturels.',
     },
     {
       name: 'Andy Armbruster',
       role: 'Secrétaire',
       photo: images.team.andy,
-      description: 'Andy assure le suivi administratif et la communication de l\'association. Rigoureux et impliqué, il gère les relations avec les partenaires, la rédaction des comptes-rendus et la visibilité d\'Af Yakaar auprès du public et des institutions.',
+      description: 'Aide aux projets sportifs et à la recherche de partenaires.',
     }
   ]
 
@@ -93,35 +93,46 @@ const About = () => {
               </div>
             </div>
 
-            {/* Texte */}
-            <div className="max-w-5xl mx-auto">
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-sm font-medium px-4 py-2 rounded-full">
-                  <Calendar className="w-4 h-4" /> Depuis septembre 2015
-                </span>
-                <span className="inline-flex items-center gap-2 bg-accent-50 text-accent-700 text-sm font-medium px-4 py-2 rounded-full">
-                  <MapPin className="w-4 h-4" /> Mandelieu
-                </span>
-              </div>
+            {/* Notre Histoire */}
+            <div className="max-w-4xl mx-auto mb-16">
+              <h2 className="section-title text-center mb-4">Notre Histoire</h2>
+              <p className="section-subtitle text-center mb-12">Le voyage qui a changé ma vie</p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-left">Une association au service de l'Afrique</h2>
+              <div className="relative border-l-4 border-primary-300 pl-8 md:pl-12 space-y-6">
+                <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary-500 border-4 border-white shadow" />
 
-              <p className="text-gray-700 text-lg leading-relaxed mb-4 text-left">
-                Af Yakaar est une association humanitaire loi 1901 fondée en septembre 2015 à Mandelieu-la-Napoule. Portée par des bénévoles passionnés, elle s'engage pour l'amélioration des conditions de vie des populations en Afrique, principalement au Sénégal.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4 text-left">
-                Notre action repose sur cinq piliers : l'éducation, la santé, le sport, la culture et le soutien à l'entrepreneuriat local. Qu'il s'agisse de fournir du matériel scolaire aux écoles de Saly, d'organiser des tournois de pétanque fédérateurs, de développer une école de danse pour les enfants ou d'accompagner des femmes entrepreneurs, chaque projet est pensé pour créer un impact durable et concret.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8 text-left">
-                Nous croyons en un développement équitable, construit sur l'échange et la solidarité entre la France et le Sénégal. Chaque euro donné bénéficie directement aux communautés que nous soutenons.
-              </p>
-
-              <div className="bg-accent-50 border-l-4 border-accent-500 p-5 rounded-lg text-left">
-                <p className="text-gray-700 text-base leading-relaxed">
-                  <span className="font-bold text-accent-600">Avantage fiscal :</span> en tant qu'association loi 1901, vos dons ouvrent droit à une réduction d'impôt de 66%.
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  En 2012 une amie me propose de les rejoindre au Sénégal, je décide de partir dix jours avec mes deux fils (Andy et Sébastien),
+                  dans la petite ville de Saly.
+                  Dès notre arrivée, nous avons ressentis un bien-être indescriptible, j’avais le sentiment
+                  d'être déjà venue, de toujours avoir connu ce pays.
                 </p>
+
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Lors de notre séjour, nous avons rencontrés des personnes extraordinaires, dôtés d’une grande
+                  gentillesse et d'une bienveillance incroyable. Toujours le sourire malgré leur vie difficile.
+                  Nous avons partagés des moments privilégiés avec eux. Lors de notre départ, nous avons compris que ce
+                  voyage allait changer notre vie.
+                </p>
+
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Depuis, nous retournons ensemble sur Saly chaque année. Au fil du temps, nous avons tissés des liens très fort, fait des rencontres bouleversantes et partagé des moments magiques.
+                  Je savais au plus profond de moi que ce n'était que le début d'une belle et longue aventure.
+                </p>
+
+                <div className="relative">
+                  <div className="absolute -left-[3.25rem] md:-left-[4.25rem] top-1 w-6 h-6 rounded-full bg-accent-500 border-4 border-white shadow" />
+                  <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
+                    <p className="text-gray-800 text-lg leading-relaxed">
+                      En 2015, j'ai décidé de créer officiellement l'association <span className="text-primary-600 font-bold">AF YAKAAR</span> — « yakaar » signifie « espoir » en wolof. Depuis, avec mes deux fils, nous oeuvrons pour financer un maximum de projets au Sénégal.
+                    </p>
+                    <p className="text-primary-600 font-semibold mt-3 text-sm">— Nathalie Prophète, Fondatrice</p>
+                  </div>
+                </div>
               </div>
             </div>
+
+
           </div>
         </div>
       </section>
@@ -131,9 +142,6 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Notre Équipe</h2>
-            <p className="section-subtitle">
-              Des personnes engagées pour faire la différence
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => (
@@ -150,26 +158,80 @@ const About = () => {
         </div>
       </section>
 
-      {/* Domains Section */}
-      {/*<section className="py-16 bg-cream-50">*/}
-      {/*  <div className="container mx-auto px-4">*/}
-      {/*    <div className="text-center mb-12">*/}
-      {/*      <h2 className="section-title">Nos Domaines d'Action</h2>*/}
-      {/*      <p className="section-subtitle">*/}
-      {/*        Une approche globale pour un impact durable*/}
-      {/*      </p>*/}
-      {/*    </div>*/}
-      {/*    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">*/}
-      {/*      {domains.map((domain, index) => (*/}
-      {/*        <div key={index} className="card p-6 text-center hover:scale-105 transition-transform duration-300">*/}
-      {/*          <div className="text-5xl mb-4">{domain.icon}</div>*/}
-      {/*          <h3 className="text-lg font-bold mb-2">{domain.title}</h3>*/}
-      {/*          <p className="text-gray-600 text-sm">{domain.description}</p>*/}
-      {/*        </div>*/}
-      {/*      ))}*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      {/* Témoignage */}
+      <section className="py-16 bg-cream-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Portrait</h2>
+            <p className="section-subtitle">
+              Notre rencontre avec Arouna
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+              {/* Portrait */}
+              <div className="lg:col-span-2 flex flex-col items-center">
+                <div className="w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-2xl mb-6">
+                  <img
+                    src={images.about.about3}
+                    alt="Arouna"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Arouna</h3>
+                <p className="text-primary-600 font-medium">Saly, Sénégal</p>
+              </div>
+
+              {/* Histoire */}
+              <div className="lg:col-span-3 flex flex-col gap-6">
+                <div className="relative bg-white rounded-2xl shadow-md p-8 md:p-10">
+                  <Quote className="absolute top-4 left-4 w-10 h-10 text-primary-200" />
+                  <blockquote className="relative z-10">
+                    <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
+                      Quand j'ai rencontré Nathalie pour la première fois, je n'imaginais pas que ma vie allait changer à ce point. Grâce à son parrainage, j'ai pu reprendre mes études et décrocher mon diplôme d'institutrice. Aujourd'hui, c'est moi qui enseigne aux enfants de Saly.
+                    </p>
+                    <footer className="border-t border-cream-200 pt-4">
+                      <p className="text-primary-600 font-semibold">— Arouna</p>
+                    </footer>
+                  </blockquote>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    Lors de notre voyage en 2012, mon fils Sébastien a fait la connaissance d'Arouna, un jeune garçon de 22 ans. Il
+                    était serveur dans le bar restaurant de la résidence où nous logions. Ses parents sont décédés quand il
+                    était très jeune. Originaire de Tambacounda, il a dû quitter à 14 ans son village natal pour trouver du travail.
+                  </p>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    Arrivé sur Saly, il a eu la chance de rencontrer des personnes qui l’ont aidé pour trouver un emploi et un logement. Il était serveur dans un restaurant et logée dans une petite pièce avec un colocataire.
+                    Malheureusement, le patron du restaurant est décédé quelques années plus tard et Arouna a perdu son
+                    travail. Sans revenu, il devait trouver une solution pour subvenir aux besoins de sa famille et payer son logement.
+                  </p>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    Nous étions très touchés par son histoire, sa gentillesse et son sourire qui ne le quittaient pas.
+                    Nous avons donc décidé de l’aider, tout en d'abord en lui payant son loyer, mais aussi en l'aidant à trouver une chambre que nous avons
+                    meublé ensemble, afin de lui permettre de pouvoir rester sur Saly, vile très touristique.
+                    Il a pu retrouver un emploi quelques mois plus tard.
+                    Au fils des années, mon fils et Arouna sont devenus inséparables.
+                  </p>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    Aujourd'hui, il a construit sa vie d’homme, s’est marié avec sa femme X et a fondé une famille de 3 enfants: Karim, Maman et Mamadou. Tous vivent à 400 km de Saly, dans un petit village a côté de Tambacounda. Malgré la distance qui les sépare , ils restent unis
+                    et gardent l’espoir de pouvoir réaliser ensemble leur projet dans leur petit village afin d’être réunis pour
+                    toujours.
+                  </p>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    Pour nous c’était une évidence, il est rentré dans nos vies .et est devenu un membre de notre famille.
+                  </p>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    Voilà notre histoire
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Quote Section */}
       <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">

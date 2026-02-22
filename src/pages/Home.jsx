@@ -355,7 +355,7 @@ const Home = () => {
                   <Quote className="absolute top-4 left-4 w-10 h-10 text-primary-200" />
                   <blockquote className="relative z-10">
                     <p className="text-gray-700 text-lg md:text-xl leading-relaxed italic mb-6">
-                      Af Yakaar est né d'un rêve partagé : celui de créer un lien vivant entre la France et le Sénégal. Chaque action que nous menons, qu'il s'agisse d'équiper une école, d'organiser un tournoi de pétanque ou de soutenir une femme entrepreneur, porte en elle la conviction que la solidarité n'a pas de frontières. Ce qui me touche le plus, c'est de voir les sourires des enfants et la fierté des familles que nous accompagnons. C'est cette énergie qui nous pousse à aller toujours plus loin.
+                      Af Yakaar est là pour aider le peuple africain à travers différentes missions: la scolarité pour les enfants, les soins pour les enfants malades, l'aide aux jeunes entrepreneurs et particuliérement les femmes car cela me touche à coeur. Nous oeuvrons aussi dans le domaine du sport, avec la danse, le basket, la pétanque etc. Beaucoup de projets sont à l'étude dans les années à venir et nous allons faire encore plus de missions pour apporter du bien au Sénégal.
                     </p>
                     <footer className="border-t border-cream-200 pt-4">
                       <p className="text-primary-600 font-semibold">— La Présidente d'Af Yakaar</p>
@@ -369,35 +369,35 @@ const Home = () => {
       </section>
 
       {/* Nos Partenaires */}
-      <section className="py-16 bg-cream-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Nos Partenaires</h2>
-            <p className="section-subtitle">
-              Ils nous soutiennent dans nos actions
-            </p>
-          </div>
-          <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-            {[
-              { name: 'Mairie de Mandelieu', initials: 'MM' },
-              { name: 'Fondation Solidarité', initials: 'FS' },
-              { name: 'Sport Pour Tous', initials: 'SPT' },
-              { name: 'Éducation Sans Frontières', initials: 'ESF' },
-              { name: 'Santé Afrique', initials: 'SA' },
-            ].map((partner, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
-                  <span className="text-xl font-bold text-primary-600">{partner.initials}</span>
-                </div>
-                <p className="text-sm font-semibold text-gray-700 text-center">{partner.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/*<section className="py-16 bg-cream-100">*/}
+      {/*  <div className="container mx-auto px-4">*/}
+      {/*    <div className="text-center mb-12">*/}
+      {/*      <h2 className="section-title">Nos Partenaires</h2>*/}
+      {/*      <p className="section-subtitle">*/}
+      {/*        Ils nous soutiennent dans nos actions*/}
+      {/*      </p>*/}
+      {/*    </div>*/}
+      {/*    <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center">*/}
+      {/*      {[*/}
+      {/*        { name: 'Mairie de Mandelieu', initials: 'MM' },*/}
+      {/*        { name: 'Fondation Solidarité', initials: 'FS' },*/}
+      {/*        { name: 'Sport Pour Tous', initials: 'SPT' },*/}
+      {/*        { name: 'Éducation Sans Frontières', initials: 'ESF' },*/}
+      {/*        { name: 'Santé Afrique', initials: 'SA' },*/}
+      {/*      ].map((partner, index) => (*/}
+      {/*        <div*/}
+      {/*          key={index}*/}
+      {/*          className="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"*/}
+      {/*        >*/}
+      {/*          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">*/}
+      {/*            <span className="text-xl font-bold text-primary-600">{partner.initials}</span>*/}
+      {/*          </div>*/}
+      {/*          <p className="text-sm font-semibold text-gray-700 text-center">{partner.name}</p>*/}
+      {/*        </div>*/}
+      {/*      ))}*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>f*/}
 
       {/* CTA Section with Stats */}
       <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">
