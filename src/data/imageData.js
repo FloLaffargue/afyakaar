@@ -11,7 +11,7 @@ import andy from '../../public/images/team/andy.png'
 import about1 from '../../public/images/about1.jpg'
 import about2 from '../../public/images/about2.jpg'
 import about3 from '../../public/images/about3.jpg'
-import arouna1 from '../../public/images/arouna_family/arouna1.jpg'
+import arouna6 from '../../public/images/arouna_family/arouna6.png'
 import arouna2 from '../../public/images/arouna_family/arouna2.jpg'
 import arouna3 from '../../public/images/arouna_family/arouna3.jpg'
 import arouna4 from '../../public/images/arouna_family/arouna4.jpg'
@@ -87,7 +87,7 @@ export const images = {
   // Photos galerie portrait (Arouna)
   // Pour ajouter des photos : importer en haut du fichier puis ajouter au tableau
   // Ex: import portrait1 from '../../public/images/portrait/portrait1.jpg'
-  portrait: [arouna1, arouna2, arouna3, arouna4, arouna5],
+  portrait: [arouna6, arouna2, arouna3, arouna4, arouna5],
 
   // Images génériques
   generic: {

@@ -26,7 +26,7 @@ const Projects = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Nos Projets</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">Nos Actions</h1>
           <p className="text-xl max-w-2xl">Des actions concrètes pour un avenir meilleur au Sénégal</p>
         </div>
       </section>

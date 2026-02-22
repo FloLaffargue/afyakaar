@@ -67,7 +67,7 @@ const About = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Qui sommes-nous ?</h1>
-          <p className="text-xl">Découvrez notre histoire et notre équipe</p>
+          <p className="text-xl">Découvrez notre histoire</p>
         </div>
       </section>
 
@@ -189,7 +189,16 @@ const About = () => {
                   <Quote className="absolute top-4 left-4 w-10 h-10 text-primary-200" />
                   <blockquote className="relative z-10">
                     <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
-                      Quand j'ai rencontré Nathalie pour la première fois, je n'imaginais pas que ma vie allait changer à ce point. Grâce à son parrainage, j'ai pu reprendre mes études et décrocher mon diplôme d'institutrice. Aujourd'hui, c'est moi qui enseigne aux enfants de Saly.
+                      Ma rencontre avec Nathalie m’a permis d’évoluer dans ma vie d’homme, de mari et de père de famille.
+                      D’avoir un soutien moral, d’avoir des conseils pour ma vie professionnel, Nathalie m’a donné la volonté
+                      de me dépasser pour réussir mes projets.
+                    </p>
+                    <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
+                      J’ai trouvé une famille, une maman de coeur, deux frères qui me soutiennent au quotidien et m’apportent de la
+                      force.<br />
+                      Aujourd’hui le regard des gens a changé sur moi, on me respecte, j’ai le sentiment enfin d’être
+                      quelqu’un ! Par leur affection, je me sens fort, j’ai appris des valeurs essentielles.
+                      Être une belle personne et me battre pour ma famille.
                     </p>
                     <footer className="border-t border-cream-200 pt-4">
                       <p className="text-primary-600 font-semibold">— Arouna</p>

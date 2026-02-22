@@ -50,8 +50,8 @@ const Contact = () => {
                   Avantage Fiscal
                 </h3>
                 <p className="text-gray-700 text-lg">
-                  Vos dons à Af Yakaar ouvrent droit à une <span className="font-bold text-primary-600">réduction d'impôt de 66%</span>.
-                  Par exemple, un don de 100€ ne vous coûte réellement que 34€ après déduction fiscale.
+                  Vos dons à Af Yakaar ouvrent droit à une <span className="font-bold text-primary-600">réduction d'impôt de 60%</span>.
+                  Par exemple, un don de 100€ ne vous coûte réellement que 40€ après déduction fiscale.
                 </p>
               </div>
 

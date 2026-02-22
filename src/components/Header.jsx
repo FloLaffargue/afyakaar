@@ -10,7 +10,7 @@ const Header = () => {
   const navItems = [
     { path: '/', label: 'Accueil' },
     { path: '/about', label: 'Qui sommes-nous ?' },
-    { path: '/projects', label: 'Nos Projets' },
+    { path: '/projects', label: 'Nos Actions' },
     { path: '/news', label: 'Actualités' },
     { path: '/contact', label: 'Contact' },
   ]

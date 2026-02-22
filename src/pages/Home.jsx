@@ -48,9 +48,8 @@ const Home = () => {
   ]
 
   const stats = [
-    { value: '66%', label: 'Réduction Fiscale', description: 'Déduction d\'impôt sur tous vos dons' },
+    { value: '60%', label: 'Réduction Fiscale', description: 'Déduction d\'impôt sur tous vos dons' },
     { value: '100%', label: 'Impact Direct', description: 'Chaque euro bénéficie aux communautés' },
-    { value: '9', label: 'Années d\'Action', description: 'Depuis 2015 au service de l\'Afrique' }
   ]
 
   const featuredProjects = projects2026.slice(0, 3).map((p) => {
@@ -110,7 +109,7 @@ const Home = () => {
           <div className="container mx-auto px-4 pb-12 md:pb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">Af Yakaar</h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl drop-shadow">
-              L'espoir en action, du sud de la France au Sénégal
+              Au service de l'Afrique
             </p>
           </div>
         </div>
@@ -131,24 +130,13 @@ const Home = () => {
 
             {/* Texte */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">L'espoir en action, du sud de la France au Sénégal</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Agir ici, changer des vies là-bas</h2>
               <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-5">
-                Depuis plus de <span className="font-semibold text-primary-600">10 ans</span>, nous tissons un pont entre Mandelieu et le Sénégal. Chaque projet que nous portons — un tournoi de pétanque, une salle de classe équipée, un cours de danse — naît d'une conviction simple : la solidarité change des vies, des deux côtés de la Méditerranée.
+                Depuis plus de <span className="font-semibold text-primary-600">10 ans</span>, nous mettons toute notre énergie pour apporter du bonheur au Sénégal. Chaque projet que nous portons (collecte de fond au travers de tournois de pétanque, achat de matériel scolaire, don de vêtements, etc.) naît d'une conviction simple : la solidarité change des vies, des deux côtés de la Méditerranée.
               </p>
               <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8">
                 Af Yakaar, c'est avant tout une aventure humaine portée par des bénévoles passionnés, où chaque don se transforme en impact concret sur le terrain.
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-base font-medium px-4 py-2 rounded-full">
-                  <MapPin className="w-4 h-4" /> Mandelieu
-                </span>
-                <span className="inline-flex items-center gap-2 bg-accent-50 text-accent-700 text-base font-medium px-4 py-2 rounded-full">
-                  <Calendar className="w-4 h-4" /> Depuis 2015
-                </span>
-                <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-base font-medium px-4 py-2 rounded-full">
-                  <Globe className="w-4 h-4" /> Sénégal
-                </span>
-              </div>
               <Link
                 to="/about"
                 className="inline-flex items-center text-lg text-primary-600 hover:text-primary-700 font-semibold transition-colors duration-200"
@@ -412,7 +400,7 @@ const Home = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center bg-cream-50 rounded-2xl p-8 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-4 border-primary-200/30">
                 <div className="text-6xl md:text-7xl font-black text-primary-600 mb-4">{stat.value}</div>

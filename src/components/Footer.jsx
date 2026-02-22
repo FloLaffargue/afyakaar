@@ -21,7 +21,7 @@ const Footer = () => {
               Association humanitaire loi 1901 basée à Mandelieu, intervenant principalement au Sénégal.
             </p>
             <p className="text-primary-400 font-semibold mt-4">
-              Réduction d'impôt de 66% sur vos dons
+              Réduction d'impôt de 60% sur vos dons
             </p>
           </div>
 
@@ -41,7 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/projects" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  Nos Projets
+                  Nos Actions
                 </Link>
               </li>
               <li>
@@ -63,12 +63,6 @@ const Footer = () => {
                   Résidence les Terrasses Bat F<br />
                   06210 Mandelieu
                 </span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="w-5 h-5 text-primary-400" />
-                <a href="tel:+33617808205" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  06 17 80 82 05
-                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-5 h-5 text-primary-400" />
@@ -100,9 +94,6 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
-            <p className="text-gray-400 text-sm mt-4">
-              WhatsApp: +33 6 75 18 61 57
-            </p>
           </div>
         </div>
 
