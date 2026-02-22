@@ -233,6 +233,26 @@ const About = () => {
         </div>
       </section>
 
+      {/* Galerie Portrait */}
+      <section className="py-16 bg-cream-200">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Quelques souvenirs avec Arouna et sa famille</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {images.portrait && images.portrait.map((photo, index) => (
+              <div key={index} className="rounded-xl overflow-hidden shadow-lg aspect-square">
+                <img
+                  src={photo}
+                  alt={`Souvenir avec Arouna ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Quote Section */}
       <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">
         <div className="container mx-auto px-4 text-center">

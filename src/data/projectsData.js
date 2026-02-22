@@ -140,7 +140,7 @@ export const allProjects = [
 export const projects2026 = allProjects.filter((p) => p.year === 2026)
 
 export const getProjectYears = () => {
-  return [...new Set(allProjects.map((p) => p.year))].sort((a, b) => b - a)
+  return [...new Set(allProjects.map((p) => p.year))].sort((a, b) => a - b)
 }
 
 export const getCategoryById = (id) => categories.find((c) => c.id === id)

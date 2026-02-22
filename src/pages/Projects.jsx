@@ -8,7 +8,7 @@ const iconMap = { Trophy, GraduationCap, Music, Briefcase, HeartPulse }
 
 const Projects = () => {
   const years = getProjectYears()
-  const [selectedYear, setSelectedYear] = useState(years[0])
+  const [selectedYear, setSelectedYear] = useState(years[years.length - 1])
 
   const filteredProjects = allProjects.filter((p) => p.year === selectedYear)
 
@@ -58,7 +58,7 @@ const Projects = () => {
           <div className="text-center mb-12">
             <h2 className="section-title">Projets {selectedYear}</h2>
             <p className="section-subtitle">
-              {selectedYear === years[0] ? 'Nos initiatives pour l\'année en cours' : `Nos réalisations de ${selectedYear}`}
+              {selectedYear === years[years.length - 1] ? 'Nos initiatives pour l\'année en cours' : `Nos réalisations de ${selectedYear}`}
             </p>
           </div>
 

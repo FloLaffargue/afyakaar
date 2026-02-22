@@ -1,33 +1,17 @@
-import { Mail, Phone, MapPin, MessageSquare, Heart, Info, Facebook, Instagram } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, Heart, Info, Facebook, Instagram, Send } from 'lucide-react'
 import { images } from '../data/imageData'
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Adresse',
-      details: [
-        '151 impasse de la Sumerie',
-        'Résidence les Terrasses Bat F',
-        '06210 Mandelieu'
-      ]
-    },
-    {
-      icon: Phone,
-      title: 'Téléphone',
-      details: ['06 17 80 82 05']
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      details: ['af.yakaar@outlook.fr']
-    },
-    {
-      icon: MessageSquare,
-      title: 'WhatsApp',
-      details: ['+33 6 75 18 61 57']
-    }
-  ]
+  const [formData, setFormData] = useState({ objet: '', email: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const mailtoLink = `mailto:af.yakaar@outlook.fr?subject=${encodeURIComponent(formData.objet)}&body=${encodeURIComponent(`De: ${formData.email}\n\n${formData.message}`)}`
+    window.location.href = mailtoLink
+    setSubmitted(true)
+  }
 
   return (
     <div>
@@ -49,28 +33,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Info Section */}
+      {/* Content Section */}
       <section className="py-16 bg-cream-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon
-              return (
-                <div key={index} className="card p-6 text-center hover:scale-105 transition-transform duration-300">
-                  <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-primary-600" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{info.title}</h3>
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600">{detail}</p>
-                  ))}
-                </div>
-              )
-            })}
-          </div>
-
           {/* Donation Info */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto mb-12">
             <div className="card p-8 md:p-12">
               <div className="flex items-center justify-center mb-6">
                 <Heart className="w-12 h-12 text-primary-500 fill-primary-500" />
@@ -92,7 +59,7 @@ const Contact = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-3">Comment faire un don ?</h3>
                   <p className="text-gray-700 mb-4">
-                    Pour effectuer un don, vous pouvez nous contacter par email ou téléphone.
+                    Pour effectuer un don, vous pouvez nous contacter par email.
                     Nous vous fournirons toutes les informations nécessaires et vous recevrez un reçu fiscal
                     pour votre déclaration d'impôts.
                   </p>
@@ -130,6 +97,72 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Formulaire de contact */}
+          <div className="max-w-5xl mx-auto">
+            <div className="card p-8 md:p-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Envoyez-nous un message</h2>
+              {submitted ? (
+                <div className="text-center py-8">
+                  <div className="bg-green-50 text-green-700 p-6 rounded-xl">
+                    <p className="text-lg font-semibold mb-2">Merci pour votre message !</p>
+                    <p>Votre client email devrait s'ouvrir avec le message pré-rempli.</p>
+                    <button
+                      onClick={() => { setSubmitted(false); setFormData({ objet: '', email: '', message: '' }) }}
+                      className="mt-4 text-primary-600 font-medium hover:underline"
+                    >
+                      Envoyer un autre message
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label htmlFor="objet" className="block text-sm font-semibold text-gray-700 mb-2">Objet</label>
+                    <input
+                      type="text"
+                      id="objet"
+                      required
+                      value={formData.objet}
+                      onChange={(e) => setFormData({ ...formData, objet: e.target.value })}
+                      placeholder="L'objet de votre message"
+                      className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="votre@email.com"
+                      className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                    <textarea
+                      id="message"
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Votre message..."
+                      className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition resize-vertical"
+                    />
+                  </div>
+                  <div className="text-center pt-2">
+                    <button type="submit" className="btn-primary inline-flex items-center gap-2 py-3 px-8">
+                      <Send className="w-5 h-5" />
+                      Envoyer
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </div>
