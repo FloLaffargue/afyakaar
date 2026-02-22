@@ -14,7 +14,6 @@ import {
 } from 'lucide-react'
 import { images } from '../data/imageData'
 import { projects2026, getCategoryById } from '../data/projectsData'
-import Carousel from '../components/Carousel'
 
 const Home = () => {
   const missions = [
@@ -97,39 +96,24 @@ const Home = () => {
     ]
   }
 
-  const carouselSlides = [
-    {
-      image: images.achievements.school,
-      title: 'Soutien Scolaire',
-      description: 'Fournitures scolaires et matériel éducatif pour les écoles de Saly'
-    },
-    {
-      image: images.achievements.petanque,
-      title: 'Tournoi de Pétanque',
-      description: '63 équipes participantes, promotion du sport et de la convivialité'
-    },
-    {
-      image: images.projects.dance,
-      title: 'École de Danse et Chant',
-      description: 'Développement des talents artistiques des enfants'
-    },
-    {
-      image: images.achievements.sports,
-      title: 'Équipement Sportif',
-      description: 'Dons de chaussures et équipements pour la Fédération d\'athlétisme'
-    },
-    {
-      image: images.projects.entrepreneurship,
-      title: 'Entrepreneuriat Local',
-      description: 'Soutien aux femmes entrepreneurs et développement économique'
-    }
-  ]
-
   return (
     <div>
-      {/* Carousel Section */}
-      <section className="bg-cream-200">
-        <Carousel slides={carouselSlides} />
+      {/* Bannière hero */}
+      <section className="relative w-full h-[28rem] md:h-[36rem] lg:h-[42rem]">
+        <img
+          src={images.home.home2}
+          alt="Af Yakaar — L'espoir en action"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="container mx-auto px-4 pb-12 md:pb-16">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">Af Yakaar</h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl drop-shadow">
+              L'espoir en action, du sud de la France au Sénégal
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Présentation de l'Association */}
@@ -280,7 +264,7 @@ const Home = () => {
               {/* Image */}
               <div className="lg:col-span-3 rounded-xl overflow-hidden shadow-2xl">
                 <img
-                  src={images.projects.dance}
+                  src={images.home.school4}
                   alt="École de danse et chant"
                   className="w-full h-80 lg:h-[450px] object-cover"
                 />
@@ -322,9 +306,9 @@ const Home = () => {
           <div className="max-w-5xl mx-auto mb-12">
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <img
-                src={images.projects.entrepreneurship}
+                src={images.home.femmes_auto}
                 alt="Entrepreneuriat local au Sénégal"
-                className="w-full h-64 md:h-96 object-cover"
+                className="w-full h-64 md:h-[520px] object-cover"
               />
             </div>
           </div>
@@ -356,7 +340,7 @@ const Home = () => {
               <div className="lg:col-span-2 flex flex-col items-center">
                 <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-200">
                   <img
-                    src="https://placehold.co/400x400/d4a574/ffffff?text=Présidente"
+                    src={images.home.nathalie2}
                     alt="La présidente d'Af Yakaar"
                     className="w-full h-full object-cover"
                   />

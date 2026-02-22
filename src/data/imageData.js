@@ -1,6 +1,11 @@
+import hero from '../../public/images/hero.jpeg'
+import home2 from '../../public/images/home2.jpg'
+import school3 from '../../public/images/school_3.jpg'
+import school4 from '../../public/images/school_4.jpg'
+import femmes_auto from '../../public/images/femmes_auto.jpg'
+import nathalie2 from '../../public/images/nathalie2.jpg'
 import school from '../../src/assets/school.png'
 import school2 from '../../src/assets/school_2.jpg'
-import school3 from '../../src/assets/school_3.jpg'
 import petanque from '../../src/assets/petanque.jpg'
 import sports from '../../src/assets/sports.png'
 import dance from '../../src/assets/dance.png'
@@ -9,6 +14,13 @@ import health from '../../src/assets/health.png'
 import entrepreneurship from '../assets/entrepreneurship.png'
 
 export const images = {
+  home: {
+    hero,
+    home2,
+    school4,
+    femmes_auto,
+    nathalie2
+  },
   hero: {
     main: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80',
     alt: 'Enfants africains souriants - Association humanitaire'
