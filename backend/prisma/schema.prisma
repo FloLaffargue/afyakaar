@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  title           String
+  description     String   @db.Text
+  longDescription String?  @db.Text
+  image           String
+  gallery         Json     @default("[]")
+  month           String
+  year            Int
+  category        String
+  status          String
+  featured        Boolean  @default(false)
+  donationUrl     String?
+  donationGoal    Int?
+  videos          Json     @default("[]")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("projects")
+}
+
+model News {
+  id        Int      @id @default(autoincrement())
+  title     String
+  date      String
+  category  String
+  excerpt   String   @db.Text
+  content   Json
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("news")
+}
+
+model Mail {
+  id        Int      @id @default(autoincrement())
+  subject   String
+  email     String
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+
+  @@map("mails")
+}
