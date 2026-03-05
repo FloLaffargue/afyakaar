@@ -23,6 +23,9 @@ const Footer = () => {
             <p className="text-primary-400 font-semibold mt-4">
               Réduction d'impôt de 60% sur vos dons
             </p>
+            <p className="text-gray-500 text-xs mt-1">
+              * 66% pour les particuliers
+            </p>
           </div>
 
           {/* Quick Links */}

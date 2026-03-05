@@ -417,6 +417,9 @@ const Home = () => {
                 <div className="text-6xl md:text-7xl font-black text-primary-600 mb-4">{stat.value}</div>
                 <div className="text-2xl font-bold text-gray-900 mb-3">{stat.label}</div>
                 <div className="text-gray-600 text-base">{stat.description}</div>
+                {stat.value === '60%' && (
+                  <p className="text-gray-400 text-xs mt-2">* 66% pour les particuliers</p>
+                )}
               </div>
             ))}
           </div>
@@ -424,7 +427,7 @@ const Home = () => {
           {/* CTA Button */}
           <div className="text-center">
             <Link
-              to="/contact"
+              to="/donate"
               className="inline-flex items-center bg-cream-50 text-primary-600 hover:bg-cream-200 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Nous soutenir

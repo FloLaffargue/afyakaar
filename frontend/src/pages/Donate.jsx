@@ -39,6 +39,9 @@ const Donate = () => {
                   Vos dons à Af Yakaar ouvrent droit à une <span className="font-bold text-primary-600">réduction d'impôt de 60%</span>.
                   Par exemple, un don de 100€ ne vous coûte réellement que 40€ après déduction fiscale.
                 </p>
+                <p className="text-gray-500 text-sm mt-2">
+                  * Pour les particuliers, la réduction d'impôt s'élève à 66% du montant du don.
+                </p>
               </div>
 
               <div className="space-y-6">

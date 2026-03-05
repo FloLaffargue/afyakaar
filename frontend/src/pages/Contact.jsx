@@ -153,14 +153,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <blockquote className="text-2xl md:text-3xl font-bold italic max-w-3xl mx-auto">
-            « Chaque don fait la différence. Merci de votre soutien ! »
-          </blockquote>
-        </div>
-      </section>
     </div>
   )
 }
