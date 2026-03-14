@@ -21,10 +21,11 @@ const Home = () => {
   const [featuredProjects, setFeaturedProjects] = useState([])
 
   useEffect(() => {
-    fetchProjects({ year: 2026 })
+    fetchProjects({ year: new Date().getFullYear() })
       .then((projects) => {
+        const sorted = [...projects].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
         setFeaturedProjects(
-          projects.slice(0, 3).map((p) => {
+          sorted.slice(0, 3).map((p) => {
             const cat = getCategoryById(p.category)
             return { ...p, categoryLabel: cat?.label, categoryColor: cat?.color }
           })
@@ -332,7 +333,7 @@ const Home = () => {
               <div className="lg:col-span-2 flex flex-col items-center">
                 <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-200">
                   <img
-                    src={images.home.nathalie2}
+                    src={images.team.nathalie}
                     alt="La présidente d'Af Yakaar"
                     className="w-full h-full object-cover"
                   />

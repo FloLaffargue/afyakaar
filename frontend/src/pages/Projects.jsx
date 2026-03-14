@@ -27,7 +27,10 @@ const Projects = () => {
   useEffect(() => {
     if (!selectedYear) return
     fetchProjects({ year: selectedYear })
-      .then(setFilteredProjects)
+      .then((projects) => {
+        const sorted = [...projects].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
+        setFilteredProjects(sorted)
+      })
       .catch(console.error)
   }, [selectedYear])
 
