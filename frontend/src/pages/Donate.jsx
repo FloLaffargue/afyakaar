@@ -52,6 +52,11 @@ const Donate = () => {
                     Nous vous fournirons toutes les informations nécessaires et vous recevrez un reçu fiscal
                     pour votre déclaration d'impôts.
                   </p>
+                  <p className="text-gray-700 mb-4">
+                    Vous pouvez également financer directement un projet via sa cagnotte en ligne. <br/>
+                    => Rendez-vous sur la page <Link to="/projects" className="text-primary-600 font-semibold hover:underline">Nos Actions</Link> pour
+                    découvrir les projets et participer à leur cagnotte.
+                  </p>
                 </div>
 
                 <div className="bg-accent-50 p-6 rounded-lg">

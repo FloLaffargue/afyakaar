@@ -18,7 +18,8 @@ const Projects = () => {
       .then((projects) => {
         const uniqueYears = [...new Set(projects.map((p) => p.year))].sort((a, b) => a - b)
         setYears(uniqueYears)
-        setSelectedYear(uniqueYears[uniqueYears.length - 1])
+        const currentYear = new Date().getFullYear()
+        setSelectedYear(uniqueYears.includes(currentYear) ? currentYear : uniqueYears[uniqueYears.length - 1])
       })
       .catch(console.error)
   }, [])
@@ -43,9 +44,16 @@ const Projects = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/90 to-accent-500/90" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Nos Actions</h1>
-          <p className="text-xl max-w-2xl">Des actions concrètes pour un avenir meilleur au Sénégal</p>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nos Actions</h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-4">
+            L'association a besoin sans cesse de soutien financier et matériel pour mener à bien tous les projets qu'elle a engagés.
+            N'hésitez pas à y participer au travers des cagnottes en ligne disponibles sur chacun des projets.
+          </p>
+          <p className="text-2xl font-bold flex items-center justify-center gap-2">
+            Merci pour eux
+            <Heart className="w-7 h-7 fill-white" />
+          </p>
         </div>
       </section>
 
@@ -76,7 +84,7 @@ const Projects = () => {
           <div className="text-center mb-12">
             <h2 className="section-title">Projets {selectedYear}</h2>
             <p className="section-subtitle">
-              {selectedYear === years[years.length - 1] ? `Nos initiatives pour l'année ${selectedYear}` : `Nos réalisations de ${selectedYear}`}
+              {selectedYear === years[years.length - 1] ? `Nos initiatives pour l'année ${selectedYear}` : `Soutenir nos projets en cours pour ${selectedYear}`}
             </p>
           </div>
 
@@ -145,7 +153,7 @@ const Projects = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-1">5</div>
+              <div className="text-4xl md:text-5xl font-bold mb-1">10+</div>
               <div className="text-white/80 text-sm uppercase tracking-wider font-medium">Projets en 2026</div>
             </div>
             <div>
@@ -169,7 +177,7 @@ const Projects = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
             <Link
-              to="/contact"
+              to="/donate"
               className="flex-1 flex items-center gap-3 justify-center bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Heart className="w-5 h-5" />

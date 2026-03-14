@@ -225,7 +225,7 @@ const About = () => {
                     Au fils des années, mon fils et Arouna sont devenus inséparables.
                   </p>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    Aujourd'hui, il a construit sa vie d’homme, s’est marié avec sa femme X et a fondé une famille de 3 enfants: Karim, Maman et Mamadou. Tous vivent à 400 km de Saly, dans un petit village a côté de Tambacounda. Malgré la distance qui les sépare , ils restent unis
+                    Aujourd'hui, il a construit sa vie d’homme, s’est marié avec sa femme Koumba et a fondé une famille de 3 enfants: Karim, Maman et Mamadou. Tous vivent à 400 km de Saly, dans un petit village a côté de Tambacounda. Malgré la distance qui les sépare , ils restent unis
                     et gardent l’espoir de pouvoir réaliser ensemble leur projet dans leur petit village afin d’être réunis pour
                     toujours.
                   </p>

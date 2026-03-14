@@ -6,7 +6,6 @@ import {
   Trophy,
   TrendingUp,
   ArrowRight,
-  Calendar,
   Store,
   Shirt,
   Globe,
@@ -208,10 +207,6 @@ const Home = () => {
                     className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-semibold shadow">
-                    <Calendar className="w-3 h-3" />
-                    {project.month}
-                  </div>
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <span className={`self-start inline-flex items-center ${project.categoryColor} text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide mb-3`}>
