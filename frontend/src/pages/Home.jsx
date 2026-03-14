@@ -333,7 +333,7 @@ const Home = () => {
               <div className="lg:col-span-2 flex flex-col items-center">
                 <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-200">
                   <img
-                    src={images.team.nathalie}
+                    src={images.home.nathalie2}
                     alt="La présidente d'Af Yakaar"
                     className="w-full h-full object-cover"
                   />
