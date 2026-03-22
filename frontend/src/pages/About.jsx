@@ -220,7 +220,7 @@ const About = () => {
                   <p className="text-gray-700 text-base leading-relaxed">
                     Nous étions très touchés par son histoire, sa gentillesse et son sourire qui ne le quittaient pas.
                     Nous avons donc décidé de l’aider, tout en d'abord en lui payant son loyer, mais aussi en l'aidant à trouver une chambre que nous avons
-                    meublé ensemble, afin de lui permettre de pouvoir rester sur Saly, vile très touristique.
+                    meublé ensemble, afin de lui permettre de pouvoir rester sur Saly, ville très touristique.
                     Il a pu retrouver un emploi quelques mois plus tard.
                     Au fils des années, mon fils et Arouna sont devenus inséparables.
                   </p>

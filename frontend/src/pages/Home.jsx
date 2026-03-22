@@ -350,7 +350,7 @@ const Home = () => {
                     <p className="text-gray-700 text-lg md:text-xl leading-relaxed italic mb-6">
                       Af Yakaar œuvre pour soutenir les populations africaines à travers plusieurs actions concrètes : favoriser l’accès à la scolarité des enfants, accompagner les enfants malades dans leur prise en charge médicale, et soutenir les jeunes entrepreneurs, avec une attention particulière portée aux femmes, une cause qui nous tient profondément à cœur.
                       Nous intervenons également dans le domaine du sport en promouvant des disciplines telles que la danse, le basketball ou encore la pétanque.
-                      De nombreux projets sont actuellement en préparation pour les années à venir, et nous poursuivrons nos efforts afin de multiplier les actions solidaires et contribuer durablement au développement du Sénégal.a
+                      De nombreux projets sont actuellement en préparation pour les années à venir, et nous poursuivrons nos efforts afin de multiplier les actions solidaires et contribuer durablement au développement du Sénégal.
                     </p>
                     <footer className="border-t border-cream-200 pt-4">
                       <p className="text-primary-600 font-semibold">— La Présidente d'Af Yakaar</p>
