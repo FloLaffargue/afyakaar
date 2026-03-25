@@ -89,7 +89,7 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/af.yakaar?igsh=MTdqcXV1NjJveTE0MQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-3 rounded-full hover:bg-primary-500 transition-colors"

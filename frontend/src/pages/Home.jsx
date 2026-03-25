@@ -118,7 +118,7 @@ const Home = () => {
           <div className="container mx-auto px-4 pb-12 md:pb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">Af Yakaar</h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl drop-shadow">
-              Au service de l'Afrique
+              Au service du Sénégal
             </p>
           </div>
         </div>

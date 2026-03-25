@@ -132,7 +132,7 @@ const Contact = () => {
           </p>
           <div className="flex justify-center gap-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/18H3ytuXi7"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1877F2] hover:bg-[#0c63d4] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"

@@ -87,8 +87,8 @@ const News = () => {
                 <article key={news.id} className="card hover:scale-105 transition-transform duration-300">
                   {news.image && (
                     <div className="h-48 bg-gradient-to-br from-primary-200 to-accent-200">
-                      <img 
-                        src={news.image} 
+                      <img
+                        src={news.image}
                         alt={news.title}
                         className="w-full h-full object-cover"
                       />
@@ -138,7 +138,7 @@ const News = () => {
             </p>
             <div className="flex justify-center gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/18H3ytuXi7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -146,7 +146,7 @@ const News = () => {
                 Facebook
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/af.yakaar?igsh=MTdqcXV1NjJveTE0MQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
