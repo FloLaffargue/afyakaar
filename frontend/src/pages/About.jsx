@@ -102,21 +102,21 @@ const About = () => {
                 <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary-500 border-4 border-white shadow" />
 
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  En 2012 une amie me propose de les rejoindre au Sénégal, je décide de partir dix jours avec mes deux fils (Andy et Sébastien),
+                  En 2012, une amie me propose de la rejoindre au Sénégal, je décide de partir dix jours avec mes deux fils (Andy et Sébastien),
                   dans la petite ville de Saly.
-                  Dès notre arrivée, nous avons ressentis un bien-être indescriptible, j’avais le sentiment
+                  Dès notre arrivée, nous avons ressenti un bien-être indescriptible, j’avais le sentiment
                   d'être déjà venue, de toujours avoir connu ce pays.
                 </p>
 
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Lors de notre séjour, nous avons rencontrés des personnes extraordinaires, dôtés d’une grande
+                  Lors de notre séjour, nous avons rencontré des personnes extraordinaires, dotées d’une grande
                   gentillesse et d'une bienveillance incroyable. Toujours le sourire malgré leur vie difficile.
-                  Nous avons partagés des moments privilégiés avec eux. Lors de notre départ, nous avons compris que ce
+                  Nous avons partagé des moments privilégiés avec eux. Lors de notre départ, nous avons compris que ce
                   voyage allait changer notre vie.
                 </p>
 
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Depuis, nous retournons ensemble sur Saly chaque année. Au fil du temps, nous avons tissés des liens très fort, fait des rencontres bouleversantes et partagé des moments magiques.
+                  Depuis, nous retournons ensemble sur Saly chaque année. Au fil du temps, nous avons tissé des liens très forts, fait des rencontres bouleversantes et partagé des moments magiques.
                   Je savais au plus profond de moi que ce n'était que le début d'une belle et longue aventure.
                 </p>
 
@@ -124,7 +124,7 @@ const About = () => {
                   <div className="absolute -left-[3.25rem] md:-left-[4.25rem] top-1 w-6 h-6 rounded-full bg-accent-500 border-4 border-white shadow" />
                   <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
                     <p className="text-gray-800 text-lg leading-relaxed">
-                      En 2015, j'ai décidé de créer officiellement l'association <span className="text-primary-600 font-bold">AF YAKAAR</span> — « yakaar » signifie « espoir » en wolof. Depuis, avec mes deux fils, nous oeuvrons pour financer un maximum de projets au Sénégal.
+                      En 2015, j'ai décidé de créer officiellement l'association <span className="text-primary-600 font-bold">AF YAKAAR</span> — « yakaar » signifie « espoir » en wolof. Depuis, avec mes deux fils, nous œuvrons pour financer un maximum de projets au Sénégal.
                     </p>
                     <p className="text-primary-600 font-semibold mt-3 text-sm">— Nathalie Prophète, Fondatrice</p>
                   </div>
@@ -190,11 +190,11 @@ const About = () => {
                   <blockquote className="relative z-10">
                     <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
                       Ma rencontre avec Nathalie m’a permis d’évoluer dans ma vie d’homme, de mari et de père de famille.
-                      D’avoir un soutien moral, d’avoir des conseils pour ma vie professionnel, Nathalie m’a donné la volonté
+                      D’avoir un soutien moral, d’avoir des conseils pour ma vie professionnelle, Nathalie m’a donné la volonté
                       de me dépasser pour réussir mes projets.
                     </p>
                     <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
-                      J’ai trouvé une famille, une maman de coeur, deux frères qui me soutiennent au quotidien et m’apportent de la
+                      J’ai trouvé une famille, une maman de cœur, deux frères qui me soutiennent au quotidien et m’apportent de la
                       force.<br />
                       Aujourd’hui le regard des gens a changé sur moi, on me respecte, j’ai le sentiment enfin d’être
                       quelqu’un ! Par leur affection, je me sens fort, j’ai appris des valeurs essentielles.
@@ -213,27 +213,27 @@ const About = () => {
                     était très jeune. Originaire de Tambacounda, il a dû quitter à 14 ans son village natal pour trouver du travail.
                   </p>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    Arrivé sur Saly, il a eu la chance de rencontrer des personnes qui l’ont aidé pour trouver un emploi et un logement. Il était serveur dans un restaurant et logée dans une petite pièce avec un colocataire.
+                    Arrivé sur Saly, il a eu la chance de rencontrer des personnes qui l’ont aidé pour trouver un emploi et un logement. Il était serveur dans un restaurant et logé dans une petite pièce avec un colocataire.
                     Malheureusement, le patron du restaurant est décédé quelques années plus tard et Arouna a perdu son
                     travail. Sans revenu, il devait trouver une solution pour subvenir aux besoins de sa famille et payer son logement.
                   </p>
                   <p className="text-gray-700 text-base leading-relaxed">
                     Nous étions très touchés par son histoire, sa gentillesse et son sourire qui ne le quittaient pas.
-                    Nous avons donc décidé de l’aider, tout en d'abord en lui payant son loyer, mais aussi en l'aidant à trouver une chambre que nous avons
-                    meublé ensemble, afin de lui permettre de pouvoir rester sur Saly, ville très touristique.
+                    Nous avons donc décidé de l’aider, tout d'abord en lui payant son loyer, mais aussi en l'aidant à trouver une chambre que nous avons
+                    meublée ensemble, afin de lui permettre de pouvoir rester sur Saly, ville très touristique.
                     Il a pu retrouver un emploi quelques mois plus tard.
-                    Au fils des années, mon fils et Arouna sont devenus inséparables.
+                    Au fil des années, mon fils et Arouna sont devenus inséparables.
                   </p>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    Aujourd'hui, il a construit sa vie d’homme, s’est marié avec sa femme Koumba et a fondé une famille de 3 enfants: Karim, Maman et Mamadou. Tous vivent à 400 km de Saly, dans un petit village a côté de Tambacounda. Malgré la distance qui les sépare , ils restent unis
+                    Aujourd'hui, il a construit sa vie d’homme, s’est marié avec sa femme Koumba et a fondé une famille de 3 enfants : Karim, Maman et Mamadou. Tous vivent à 400 km de Saly, dans un petit village à côté de Tambacounda. Malgré la distance qui les sépare, ils restent unis
                     et gardent l’espoir de pouvoir réaliser ensemble leur projet dans leur petit village afin d’être réunis pour
                     toujours.
                   </p>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    Pour nous c’était une évidence, il est rentré dans nos vies .et est devenu un membre de notre famille.
+                    Pour nous c’était une évidence, il est entré dans nos vies et est devenu un membre de notre famille.
                   </p>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    Voilà notre histoire
+                    Voilà notre histoire.
                   </p>
                 </div>
               </div>

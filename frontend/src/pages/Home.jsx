@@ -59,7 +59,7 @@ const Home = () => {
     {
       icon: Trophy,
       title: 'Loisirs',
-      description: 'Organisation de tournoi de pétanque et activités sportives',
+      description: 'Organisation de tournois de pétanque et activités sportives',
       color: 'text-yellow-500',
       bgColor: 'bg-yellow-50'
     }
@@ -89,7 +89,7 @@ const Home = () => {
     {
       icon: TrendingUp,
       title: 'Stands de Vente',
-      description: 'Création d\'espaces pour femmes entrepreneurs',
+      description: 'Création d\'espaces pour femmes entrepreneures',
       color: 'text-green-500',
       bgColor: 'bg-green-50'
     }
