@@ -23,8 +23,8 @@ services:
     ports:
       - "3001:3001"
     environment:
-      DATABASE_URL: "mysql://afyakaar:Busboy8_Synopses_Scoured@db:3306/afyakaar"
-      PORT: "3001"
+      DATABASE_URL: ${DATABASE_URL:-}
+      PORT: ${PORT:-}
       SMTP_HOST: ${SMTP_HOST:-}
       SMTP_PORT: ${SMTP_PORT:-587}
       SMTP_USER: ${SMTP_USER:-}
