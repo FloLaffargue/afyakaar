@@ -9,12 +9,6 @@ let transporter: Transporter | null = null
 
 if (mailerConfigured) {
   const port = parseInt(SMTP_PORT || '587', 10)
-  console.log({
-    host: SMTP_HOST,
-    port,
-    secure: port === 465,
-    auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
-  })
   transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port,
