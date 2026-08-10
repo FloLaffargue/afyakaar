@@ -13,6 +13,7 @@ lerna-debug.log*
 
 backend/node_modules
 frontend/node_modules
+frontend/dist
 
 backoffice/node_modules
 backoffice/dist

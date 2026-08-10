@@ -31,11 +31,11 @@ export async function fetchNewsById(id) {
   return fetchJSON(`/news/${id}`)
 }
 
-export async function sendContactMessage({ subject, email, message }) {
+export async function sendContactMessage({ subject, email, message, website }) {
   const res = await fetch(`${API_BASE}/mails`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ subject, email, message }),
+    body: JSON.stringify({ subject, email, message, website }),
   })
   if (!res.ok) throw new Error(`API error: ${res.status}`)
   return res.json()

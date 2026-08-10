@@ -4,7 +4,7 @@ import { images } from '../data/imageData'
 import { sendContactMessage } from '../api'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ objet: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ objet: '', email: '', message: '', website: '' })
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState(null)
   const [sending, setSending] = useState(false)
@@ -18,6 +18,7 @@ const Contact = () => {
         subject: formData.objet,
         email: formData.email,
         message: formData.message,
+        website: formData.website,
       })
       setSubmitted(true)
     } catch {
@@ -60,7 +61,7 @@ const Contact = () => {
                     <p className="text-lg font-semibold mb-2">Merci pour votre message !</p>
                     <p>Nous avons bien reçu votre message et vous répondrons dans les meilleurs délais.</p>
                     <button
-                      onClick={() => { setSubmitted(false); setFormData({ objet: '', email: '', message: '' }) }}
+                      onClick={() => { setSubmitted(false); setFormData({ objet: '', email: '', message: '', website: '' }) }}
                       className="mt-4 text-primary-600 font-medium hover:underline"
                     >
                       Envoyer un autre message
@@ -69,6 +70,19 @@ const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot anti-spam : invisible pour les humains, rempli par les bots */}
+                  <div className="absolute -left-[9999px]" aria-hidden="true">
+                    <label htmlFor="website">Ne pas remplir ce champ</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website}
+                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                    />
+                  </div>
                   <div>
                     <label htmlFor="objet" className="block text-sm font-semibold text-gray-700 mb-2">Objet</label>
                     <input

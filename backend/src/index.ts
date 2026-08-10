@@ -2,17 +2,19 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { mkdirSync } from 'fs'
-import path from 'path'
+import { UPLOADS_DIR } from './uploadsDir.js'
 import projectsRouter from './routes/projects.js'
 import newsRouter from './routes/news.js'
 import mailsRouter from './routes/mails.js'
 import uploadsRouter from './routes/uploads.js'
 
-const UPLOADS_DIR = path.resolve('/app/uploads')
 mkdirSync(UPLOADS_DIR, { recursive: true })
 
 const app = express()
 const PORT = parseInt(process.env.PORT || '3001', 10)
+
+// Derrière le proxy Nginx : nécessaire pour que le rate-limit voie l'IP réelle du visiteur
+app.set('trust proxy', 1)
 
 app.use(cors())
 app.use(express.json())
